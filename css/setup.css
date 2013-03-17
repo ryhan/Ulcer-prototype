@@ -1,0 +1,12 @@
+/* Setup.css */
+
+.setup.frame{
+  display: none;
+  
+  background-color: #FFF;
+  padding: 100px;
+  text-align: center;
+
+  font-size: 36px;
+  font-weight: bold;
+}

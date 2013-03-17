@@ -1,0 +1,65 @@
+/* Reference Image */
+img.dev{
+  opacity: 1;
+  position: fixed;
+  width:1024px;
+}
+
+.statusbar{
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.frame{
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  opacity: 0.5;
+}
+
+aside{
+  background-color: #F5F5F5;
+  border-radius: 3px;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 20px;
+  width: 320px;
+}
+
+.main{
+  background-color: white;
+  border-radius: 3px;
+  bottom: 0;
+  left: 321px;
+  position: fixed;
+  right: 0;
+  top: 20px;
+  
+  /* min-width: 700px; iPad specific width */
+}
+
+nav{
+  background-color: #D3D5DC;
+  background: -webkit-linear-gradient(top, #F4F5F7, #EEEFF2, #CBCED5, #A6AAB7);
+
+  border-bottom: 1px solid #7A8091;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow:
+    inset 0 1px 0 #FFF,
+    0 3px 2px rgba(0,0,0,0.1);
+  height: 45px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
