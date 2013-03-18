@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <!-- Apple Meta Data -->
-  <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
@@ -59,7 +59,9 @@
       <!--<nav></nav>-->
       <nav>
         <div class="btn btnLeft portraitOnly">Patient List</div>
-        <div class="btn">Capture</div>
+        <!--<div class="btn">Capture</div>-->
+        <div class="btn btnBlue">Capture</div>
+        <div id="addUlcerBtn" class="btn">Add Ulcer</div>
       </nav>
 
       <!-- Patient Information -->
@@ -137,6 +139,7 @@
         <div id="noteList" class="tabcontent hidden">
           <!-- List of notes -->
           <ul class="notes">
+            <!-- New Note interface. Unfortunately, causes iOS Safari to mysteriously crash :( -->
             <li class="newNote">
               <div class="tags"><select name="tag">
                 <option value="no tag">No Tag</option>
@@ -146,7 +149,7 @@
               </select></div>
               <div class="time">New Note</div>
               <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
-              <textarea id="noteText" placeholder="Type your notes here"></textarea>
+              <textarea id="noteText" placeholder="DO NOT TOUCH ME IN iOS"></textarea>
               </li>
             <li>
               <div class="tags">Ulcer 2<br/> Ulcer 3</div>
@@ -175,6 +178,38 @@
           </ul>
         </div>
       </div>
+
+      <div id="addUlcerPane" class="view addUlcer hidden">
+        <nav>
+          <div id="cancelUlcerPaneBtn" class="btn btnLeft">Cancel</div>
+          <div class="btn btnBlue">Save</div>
+          <h1> New Ulcer </h1>
+        </nav>
+        <div class="viewContent">
+          <ul class="steps">
+            <li><strong>Step 1 - Location</strong>
+              <input type="text" value="Anterior Deltoid"/></li>
+
+            <li><strong>Step 2 - Take a picture</strong>
+              <input type="text" value="Anterior Deltoid"/></li>
+
+            <li><strong>Step 3 - Dimensions</strong><br/>
+              <span>Length</span> <input type="number" value="2.3"/>cm<br/>
+              <span>Width</span> <input type="number" value="3.0"/>cm</br />
+              <span>Depth</span> <input type="number" value="0.3"/>cm</li>
+
+            <li><strong>Step 4 - Moisture</strong>
+              <input type="text" value="Not very"/></li>
+
+            <li><strong>Step 5 - Stage</strong>
+              <input type="text" value="Stage 2"/></li>
+
+            <li><strong>Final Notes</strong>
+              <textarea></textarea>
+          </ul>
+        </div>
+      </div>
+
     </div>
 
     <!-- New Note / Reminder Modal -->

@@ -3,6 +3,7 @@ $(function() {
   patientTabs();
   reminders();
   note();
+  newulcerPane();
 });
 
 // Manages Ulcer / Reminders / Notes Tabs
@@ -47,7 +48,7 @@ function patientTabs(){
   //showUlcers();
   //showReminders();
   showNotes();
-}
+};
 
 
 // Manages Reminders Tab
@@ -59,7 +60,7 @@ function reminders(){
     $(e.target.parentNode.parentNode).toggleClass('complete');
   });
 
-}
+};
 
 // Manages Notes Tab
 function note(){
@@ -68,8 +69,7 @@ function note(){
   $postNoteBtn = $('#postNoteBtn');
   $noteForm = $('#noteList li.newNote');
 
-  $header = $('.main header');
-  $divider = $('.main .tabdivider');
+  $tabsection = $('.main .tabsection');
 
   var postNote = function(message, tag, date){
 
@@ -101,16 +101,17 @@ function note(){
   // Selectively hide/show elements above the input so that 
   // everything fits in with the iPad keyboard.
   $noteInput.focus(function(){
-    $header.hide();
-    $divider.hide();
+    $('.tabsection').toggleClass('full');
+    $postNoteBtn.removeClass('hidden');
   });
 
   $noteInput.blur(function(){
-    $header.show();
-    $divider.show();
+    $('.tabsection').toggleClass('full');
+    $postNoteBtn.addClass('hidden');
   });
 
   // Show the 'post' button only when there's content.
+  /*
   $noteInput.keypress(function(){
     console.log('hi');
     if ($noteInput.val().length > 0){
@@ -118,6 +119,23 @@ function note(){
     }else{
       $postNoteBtn.addClass('hidden');
     }
-  });
+  });*/
 
-}
+};
+
+function newulcerPane(){
+
+  var $addUlcerBtn = $('#addUlcerBtn');
+  var $cancelUlcerPaneBtn = $('#cancelUlcerPaneBtn');
+
+  var $addUlcerPane = $('#addUlcerPane');
+
+  $addUlcerBtn.bind('touchstart', function(){
+    $addUlcerPane.removeClass('hidden');
+  }); 
+
+  $cancelUlcerPaneBtn.bind('touchstart', function(){
+    $addUlcerPane.addClass('hidden');
+  }); 
+
+};
