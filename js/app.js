@@ -94,19 +94,23 @@ function note(){
     $noteInput.val('');
 
     postNote(message, tags, time);
+    $noteInput.blur();
   });
 
 
 
   // Selectively hide/show elements above the input so that 
   // everything fits in with the iPad keyboard.
-  $noteInput.focus(function(){
-    $('.tabsection').toggleClass('full');
+  //$noteInput.focus(function(){
+  $noteInput.on('touchstart', function(){
+    $('.tabsection').addClass('full');
     $postNoteBtn.removeClass('hidden');
+    window.scrollTo(0,0);
+    setTimeout(function(){$noteInput.focus();}, 500);
   });
 
   $noteInput.blur(function(){
-    $('.tabsection').toggleClass('full');
+    $('.tabsection').removeClass('full');
     $postNoteBtn.addClass('hidden');
   });
 
