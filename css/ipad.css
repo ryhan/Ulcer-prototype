@@ -304,6 +304,7 @@ ul.ulcers{
   list-style-type: none;
   margin: 0;
   padding: 0
+  color: #444;
 }
 ul.ulcers li{
   border-bottom: 1px solid #CCC;
@@ -312,6 +313,7 @@ ul.ulcers li{
   padding-left: 180px;
   padding-left: 160px;
 }
+
 ul.ulcers li img{
   height: 80px;
   display: inline-block;
@@ -321,9 +323,14 @@ ul.ulcers li img{
 
 }
 ul.ulcers .ulcerDescription{
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   color: #444;
+}
+
+ul.ulcers li strong{
+  font-size: 18px;
+  font-weight: normal;
 }
 
 /*****************************************************************************
@@ -347,7 +354,7 @@ ul.reminders li{
 ul.reminders .time{
   position: absolute;
   top: 30px;
-  right: 50px;
+  right: 30px;
   width: 200px;
   font-size: 18px;
   font-weight: bold;
@@ -400,6 +407,45 @@ ul.reminders li.complete .checkbox img{
   100% { opacity: 0.5; -webkit-transform: scale(1); }
 }
 
+
+/*****************************************************************************
+Note List
+*****************************************************************************/
+.notes{
+  /* background-color: #F4F0DD; */
+}
+
+ul.notes{
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+  color: #444;
+}
+
+ul.notes li{
+  position: relative;
+  padding: 20px 50px;
+  padding-left: 160px;
+  font-size: 18px;
+  line-height: 26px;
+
+  border-bottom: 1px solid #CCC;
+}
+ul.notes .time{
+  font-size: 12px;
+  font-weight: bold;
+  color: #222;
+}
+ul.notes .tags{
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  width: 150px;
+  text-align: left;
+
+  font-size: 12px;
+  text-transform: uppercase;
+}
 
 
 

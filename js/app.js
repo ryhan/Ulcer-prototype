@@ -45,16 +45,17 @@ function patientTabs(){
 
   showUlcers();
   //showReminders();
-  
+  //showNotes();
 }
 
 
-// Manages toggling on/off reminders
+// Manages Reminders Tab
 function reminders(){
+
+  // Manage toggling on/off reminders
   $('#reminderList').on('touchstart', '.checkbox', function(e){
     $(e.target.parentNode).toggleClass('complete');
     $(e.target.parentNode.parentNode).toggleClass('complete');
-    console.log(e);
   });
 
 }
