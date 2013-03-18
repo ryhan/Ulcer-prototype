@@ -56,6 +56,23 @@ aside{
   /* min-width: 700px; iPad specific width */
 }
 
+.portraitOnly{
+  visibility: hidden;
+}
+
+@media all and (max-width: 699px) {
+  .portraitOnly{
+    visibility: visible;
+  }
+  .main{
+    left: 0;
+  }
+  aside{
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
 nav{
   background-color: #D3D5DC;
   background: -webkit-linear-gradient(top, #F4F5F7, #EEEFF2, #CBCED5, #A6AAB7);
@@ -97,6 +114,9 @@ nav .btn{
   font-size: 15px;
 }
 
+nav .btn.btnLeft{
+  float: left;
+}
 nav .btn:active{
   background: -webkit-linear-gradient(top, #94989F, #5B6068, #333);
   box-shadow: 
@@ -267,6 +287,16 @@ ul.tabs li:active{
 /*****************************************************************************
 Ulcer List
 *****************************************************************************/
+
+.newUlcer{
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
 ul.ulcers{
   list-style-type: none;
   margin: 0;
