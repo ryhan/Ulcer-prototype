@@ -36,6 +36,7 @@ aside{
   border-radius: 3px;
   bottom: 0;
   left: 0;
+  padding-top: 45px;
   position: fixed;
   top: 20px;
   width: 320px;
@@ -75,10 +76,6 @@ nav{
   z-index: 1;
 }
 
-/*****************************************************************************
-Patient List
-*****************************************************************************/
-
 nav .btn{
   border-radius: 4px;
   display: inline-block;
@@ -107,15 +104,95 @@ nav .btn:active{
     inset 0 3px 2px rgba(0,0,0,0.1);
 }
 
+/*****************************************************************************
+Patient List
+*****************************************************************************/
+aside ul.list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+aside ul.list li{
+  border-bottom: 1px solid #DDD;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+aside ul.list li p{
+  margin-top: 5px;
+  font-size: 14px;
+  color: #666;
+}
 
+aside ul.list li.selected{
+  background: -webkit-linear-gradient(top, #508CE6, #4B82E6, #4373E2, #3B63DD);
+  border-bottom: 1px solid #3152AC;
+  box-shadow: 
+    0 -1px 0 #3152AC;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+aside ul.list li.selected p{
+  color: white;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+
+
+/*****************************************************************************
+Patient Information
+*****************************************************************************/
 
 .main header{
-  background: -webkit-linear-gradient(top, #CCC, #EEE);
+  background: -webkit-linear-gradient(top, #C0C0C0, #EEE);
   background-color: #CCC;
   border-bottom: 1px solid #777;  
   min-height: 250px;
-  padding: 50px;
+  padding: 40px 60px;
   text-align: left;
+  overflow: hidden;
+}
+
+.main header h1{
+  font-size: 22px;
+  text-align: left;
+}
+.main header ul{
+  list-style-type: none;
+  font-size: 16px;
+  color: #444;
+}
+.main header li{
+  padding: 5px 0;
+}
+
+.main .testtarget{
+  display: inline-block;
+  width: 200px;
+  height: 180px;
+  padding: 10px;
+  float: right;
+  position: relative;
+  text-align: center;
+}
+.main .testtarget .paper{
+  position: absolute;
+  top: -10px;
+  display: inline-block;
+  width: 150px;
+  height: 180px;
+  padding: 10px;
+
+  background-color: white;
+  border-radius: 2px;
+  border: 1px solid #666;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  -webkit-transform:rotate(3deg); 
+}
+.main .testtarget .paper:nth-child(1){
+  -webkit-transform:rotate(-2deg); 
 }
 
 nav.tabs{
