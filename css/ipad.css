@@ -373,6 +373,8 @@ ul.reminders .checkbox img{
   width: 20px;
   opacity: 0;
   z-index: -1;
+  -webkit-transform: scale(3);
+  -webkit-transition: all 0.2s;
 }
 
 ul.reminders li.complete{
@@ -387,7 +389,8 @@ ul.reminders li.complete .checkbox{
 ul.reminders li.complete .checkbox img{
   opacity: 0.3;
   z-index: 1;
-  -webkit-animation: checkOff 0.5s;
+  -webkit-transform: scale(1); 
+  /*-webkit-animation: checkOff 0.5s;*/
 }
 
 @-webkit-keyframes checkOff {

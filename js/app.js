@@ -44,7 +44,7 @@ function patientTabs(){
   $noteTab.bind('touchstart', showNotes);
 
   showUlcers();
-  showReminders();
+  //showReminders();
   
 }
 
