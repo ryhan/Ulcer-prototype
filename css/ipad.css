@@ -532,9 +532,47 @@ Add Ulcer View
   -webkit-overflow-scrolling: touch;
 }
 
-#addUlcerPane .viewContent{
+#addUlcerPane .viewContent, #bradenScalePane .viewContent{
   background: -webkit-linear-gradient(top, #BBB, #EEE);
 }
+
+/***********************
+Braden (plus some above)
+***********************/
+
+#bradenScalePane table{
+  background: -webkit-linear-gradient(top, #EBEBEB, #FAFAFA);
+  margin: 45px auto 100px;  
+  box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+  width: 80%;
+}
+
+td {
+ border-bottom: 1px solid #AAA;
+}
+
+td.bdnNum{
+  padding: 5px 5px 2px 2px;
+  vertical-align: top;
+  border-right: 1px solid #AAA;
+}
+
+td.bdnQst{
+  text-align: center;
+  padding: 5px 6px;
+  vertical-align: top;
+  border-right: 1px solid #AAA;
+}
+
+td.bdnAns{
+  padding: 5px 6px 10px;
+  vertical-align: top;
+}
+
+.friction td{
+  border-bottom: none;
+}
+
 
 
 /*****************************************************************************

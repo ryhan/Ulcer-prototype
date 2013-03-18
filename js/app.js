@@ -4,6 +4,7 @@ $(function() {
   reminders();
   note();
   newulcerPane();
+  newbradenPane();
 });
 
 // Manages Ulcer / Reminders / Notes Tabs
@@ -229,4 +230,20 @@ function newulcerPane(){
     $addUlcerPane.addClass('hidden');
   }); 
 
+};
+
+function newbradenPane(){
+
+  var $bradenBtn = $('#bradenBtn');
+  var $cancelBradenBtn = $('#cancelBradenBtn');
+
+  var $bradenScalePane = $('#bradenScalePane');
+
+  $bradenBtn.bind('touchstart', function(){
+    $bradenScalePane.removeClass('hidden');
+  });
+
+  $cancelBradenBtn.bind('touchstart', function(){
+    $bradenScalePane.addClass('hidden');
+  });
 };
