@@ -66,7 +66,51 @@ function note(){
 
   $noteInput = $('#noteText');
   $postNoteBtn = $('#postNoteBtn');
+  $noteForm = $('#noteList li.newNote');
 
+  $header = $('.main header');
+  $divider = $('.main .tabdivider');
+
+  var postNote = function(message, tag, date){
+
+    var tags = $('<div class="tags" />').text(tag);
+    var date = $('<div class="time" />').text(date);
+    var message = $('<p />').text(message);
+
+    var newli = $('<li />');
+    newli.append(tags);
+    newli.append(date);
+    newli.append(message);
+
+    $noteForm.after(newli);
+  }
+
+  $postNoteBtn.bind('touchstart', function(){
+    var message = $noteInput.val();
+    var tags = "Ulcer 3";
+    var time = "Tuesday March 19, 2013 at 10:45am";
+
+    $postNoteBtn.addClass('hidden');
+    $noteInput.val('');
+
+    postNote(message, tags, time);
+  });
+
+
+
+  // Selectively hide/show elements above the input so that 
+  // everything fits in with the iPad keyboard.
+  $noteInput.focus(function(){
+    $header.hide();
+    $divider.hide();
+  });
+
+  $noteInput.blur(function(){
+    $header.show();
+    $divider.show();
+  });
+
+  // Show the 'post' button only when there's content.
   $noteInput.keypress(function(){
     console.log('hi');
     if ($noteInput.val().length > 0){
