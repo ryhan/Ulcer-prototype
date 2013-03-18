@@ -93,7 +93,8 @@ nav{
   z-index: 1;
 }
 
-nav .btn{
+nav .btn,
+.btn{
   border-radius: 4px;
   display: inline-block;
   padding: 6px 16px;
@@ -112,12 +113,30 @@ nav .btn{
   text-shadow: 0 -1px rgba(0,0,0,0.8);
   font-weight: bold;
   font-size: 15px;
+
+  -webkit-transition: opacity 0.5s;
+  opacity: 1;
 }
 
-nav .btn.btnLeft{
+.btn.hidden{
+  opacity: 0;
+}
+
+nav .btn.btnLeft,
+.btn.btnLeft{
   float: left;
 }
-nav .btn:active{
+
+nav .btn.btnBlue,
+.btn.btnBlue{
+  background: -webkit-linear-gradient(top, #6F8CDF,#587CDE, #375CD3, #274CC0);
+  border: 1px solid #304998;
+  box-shadow: 
+    inset 0 1px 2px rgba(0,0,0,0.2);
+}
+
+nav .btn:active,
+.btn:active{
   background: -webkit-linear-gradient(top, #94989F, #5B6068, #333);
   box-shadow: 
     inset 0 1px 1px rgba(0,0,0,0.6),
@@ -446,6 +465,100 @@ ul.notes .tags{
   font-size: 12px;
   text-transform: uppercase;
 }
+
+ul.notes .newNote{
+  position: relative;
+  padding-bottom: 0;
+}
+
+ul.notes .newNote textarea{
+  position: relative;
+  top: -30px;
+  width: -webkit-calc(100% - 30px);
+}
+ul.notes .newNote .postNote{
+  position: relative;
+  top: -30px;
+  line-height: normal;
+}
+
+ul.notes .newNote textarea:focus + .submitBtn{
+
+}
+
+/*****************************************************************************
+Modal
+*****************************************************************************/
+
+.modalBackdrop{
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+
+  -webkit-transition: opacity 0.5s;
+}
+
+.modalBackdrop.visible{
+  z-index: 2;
+  opacity: 1;
+}
+.modalBackdrop.visible .modal{
+  top: 0;
+  -webkit-animation: popIn 1s;
+}
+
+.modal{
+  position: relative;
+  top: 2000px;
+  width: 600px;
+  height: 400px;
+  margin: 100px auto;
+  background-color: white;
+  border: 1px solid #444;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+
+  /*-webkit-transition: top 0.5s;*/
+  
+}
+
+@-webkit-keyframes popIn {
+  0%   { opacity: 0; top: 2000px;}
+  70% { opacity: 1; top: -20px;}
+  90% { opacity: 1; top: 10px;}
+  100% { opacity: 1; top: 0;}
+}
+
+.modalContent{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 160px;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  height: -webkit-calc(100% - 45px);
+
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*
+.modal .options{
+  background-color: #EEE;
+  border-right: 1px solid #888;
+  border-bottom-left-radius: 5px;
+  width: 160px;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  height: -webkit-calc(100% - 45px);
+}
+*/
 
 
 

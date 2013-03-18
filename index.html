@@ -137,6 +137,17 @@
         <div id="noteList" class="tabcontent hidden">
           <!-- List of notes -->
           <ul class="notes">
+            <li class="newNote">
+              <div class="tags"><select name="tag">
+                <option value="no tag">No Tag</option>
+                <option value="ulcer 1">Ulcer 1</option>
+                <option value="ulcer 2">Ulcer 2</option>
+                <option value="ulcer 3">Ulcer 3</option>
+              </select></div>
+              <div class="time">New Note</div>
+              <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
+              <textarea id="noteText" placeholder="Type your notes here"></textarea>
+              </li>
             <li>
               <div class="tags">Ulcer 2<br/> Ulcer 3</div>
               <div class="time">Thursday March 7, 2013 at 2pm</div>
@@ -165,6 +176,39 @@
         </div>
       </div>
     </div>
+
+    <!-- New Note / Reminder Modal -->
+    <div class="modalBackdrop">
+      <div class="modal">
+        <nav class="tabs">
+          <div class="btn btnLeft">Cancel</div>
+          <div class="btn btnBlue">Save</div>
+          <!--<h1>Capture</h1>-->
+          <ul class="tabs">
+            <li id="noteModalTab" class="selected">Note</li>
+            <li id="reminderModalTab">Reminder</li>
+          </ul>
+        </nav>
+        <!--<div class="options">-->
+        <div class="modalContent">
+        </div>
+      </div>
+    </div>
+
+    <!-- New Ulcer Modal -->
+    <div class="modalBackdrop">
+      <div class="modal">
+        <nav>
+          <div class="btn btnLeft">Cancel</div>
+          <div class="btn btnBlue">Save</div>
+          <h1>Assess Ulcer</h1>
+        </nav>
+        <!--<div class="options">-->
+        <div class="modalContent">
+        </div>
+      </div>
+    </div>
+
   </div>
 
 

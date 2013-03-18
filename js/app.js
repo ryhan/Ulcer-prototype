@@ -2,18 +2,19 @@
 $(function() {
   patientTabs();
   reminders();
+  note();
 });
 
 // Manages Ulcer / Reminders / Notes Tabs
 function patientTabs(){
 
   // Tap Targets
-  var $tabs = $('.tabs li');
+  var $tabs = $('.main .tabs li');
   var $ulcerTab = $('#ulcerTab');
   var $reminderTab = $('#reminderTab');
   var $noteTab = $('#noteTab');
 
-  var $lists = $('.tabcontent');
+  var $lists = $('.main .tabcontent');
   var $ulcerList = $('#ulcerList');
   var $reminderList = $('#reminderList');
   var $noteList = $('#noteList');
@@ -43,9 +44,9 @@ function patientTabs(){
   $reminderTab.bind('touchstart', showReminders);
   $noteTab.bind('touchstart', showNotes);
 
-  showUlcers();
+  //showUlcers();
   //showReminders();
-  //showNotes();
+  showNotes();
 }
 
 
@@ -56,6 +57,23 @@ function reminders(){
   $('#reminderList').on('touchstart', '.checkbox', function(e){
     $(e.target.parentNode).toggleClass('complete');
     $(e.target.parentNode.parentNode).toggleClass('complete');
+  });
+
+}
+
+// Manages Notes Tab
+function note(){
+
+  $noteInput = $('#noteText');
+  $postNoteBtn = $('#postNoteBtn');
+
+  $noteInput.keypress(function(){
+    console.log('hi');
+    if ($noteInput.val().length > 0){
+      $postNoteBtn.removeClass('hidden');
+    }else{
+      $postNoteBtn.addClass('hidden');
+    }
   });
 
 }
