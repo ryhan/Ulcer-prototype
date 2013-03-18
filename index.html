@@ -57,11 +57,13 @@
     </aside>
     <div class="main">
       <!--<nav></nav>-->
-      <nav>
+      <nav id="mainNav">
         <div class="btn btnLeft portraitOnly">Patient List</div>
+        <div id="cancelNoteBtn" class="postNote btn btnLeft hidden">Cancel</div>
         <!--<div class="btn">Capture</div>-->
         <div id="captureBtn" class="btn btnBlue">Capture</div>
         <div id="addUlcerBtn" class="btn">Add Ulcer</div>
+        <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
       </nav>
 
       <!-- Patient Information -->
@@ -122,6 +124,15 @@
         <div id="reminderList" class="tabcontent hidden">
           <!-- List of reminders -->
           <ul class="reminders">
+            <li class="newReminder">
+              <input id="reminderText" type="text" />
+              <div class="time"><select name="tag">
+                <option value="1 Hour">1 Hour</option>
+                <option value="2 Hours">2 Hours</option>
+                <option value="6 Hours">6 Hours</option>
+                <option value="Today">Today</option>
+                <option value="Tomorrow">Tomorrow</option>
+              </select></div></li>
             <li>
               <div class="checkbox"><img src="img/check.png"/></div>
               Rotate Patient
@@ -139,7 +150,7 @@
         <div id="noteList" class="tabcontent hidden">
           <!-- List of notes -->
           <ul class="notes">
-            <!-- New Note interface. Unfortunately, causes iOS Safari to mysteriously crash :( -->
+            <!-- New Note interface -->
             <li class="newNote">
               <div class="tags"><select name="tag">
                 <option value="no tag">No Tag</option>
@@ -148,7 +159,7 @@
                 <option value="ulcer 3">Ulcer 3</option>
               </select></div>
               <div class="time">New Note</div>
-              <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
+              <!--<div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>-->
               <!--<input type="text" id="noteText"/>-->
               <textarea id="noteText" placeholder="Leave a note here."></textarea>
               </li>

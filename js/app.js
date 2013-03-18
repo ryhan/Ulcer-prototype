@@ -60,6 +60,73 @@ function reminders(){
     $(e.target.parentNode.parentNode).toggleClass('complete');
   });
 
+  $reminderInput = $('#reminderText');
+  $tabsection = $('.main .tabsection');
+
+  $reminderForm = $('#reminderList li.newReminder');
+
+  $navBtns = $('.main #mainNav .btn');
+  $postNoteBtn = $('#postNoteBtn');
+  $cancelNoteBtn = $('#cancelNoteBtn');
+
+  $reminderInput.on('touchstart', function(){
+    $('.tabsection').addClass('full');
+
+    $navBtns.hide();
+    $postNoteBtn.removeClass('hidden');
+    $postNoteBtn.show();
+    $cancelNoteBtn.removeClass('hidden');
+    $cancelNoteBtn.show();
+
+    window.scrollTo(0,0);
+    setTimeout(function(){$reminderInput.focus();}, 500);
+  });
+
+  $cancelNoteBtn.on('touchstart', function(){
+    $('.tabsection').removeClass('full');
+
+    $navBtns.show();
+    $postNoteBtn.addClass('hidden');
+    $postNoteBtn.hide();
+    $cancelNoteBtn.addClass('hidden');
+    $cancelNoteBtn.hide();
+  });
+
+  $postNoteBtn.on('touchstart', function(){
+    $('.tabsection').removeClass('full');
+
+    message = $reminderInput.val();
+    if (message.length > 0){
+      postReminder(message, 'Today');
+    }
+
+    $reminderInput.val(' ')
+
+    $navBtns.show();
+    $postNoteBtn.addClass('hidden');
+    $postNoteBtn.hide();
+    $cancelNoteBtn.addClass('hidden');
+    $cancelNoteBtn.hide();
+
+  })
+
+  var postReminder = function(message, time){
+    var newli = $('<li />');
+
+    var checkbox = $('<div class="checkbox" />');
+    checkbox.innerHTML = '<img src="img/check.png"/>';
+
+    var date = $('<div class="time" />').text(time);
+
+    newli.append(checkbox);
+    newli.append(message);
+    newli.append(date);
+
+    $reminderForm.after(newli);
+  }
+
+
+
 };
 
 // Manages Notes Tab
@@ -67,9 +134,11 @@ function note(){
 
   $noteInput = $('#noteText');
   $postNoteBtn = $('#postNoteBtn');
+  $cancelNoteBtn = $('#cancelNoteBtn');
   $noteForm = $('#noteList li.newNote');
 
-  $captureBtn = $('#captureBtn');
+  $navBtns = $('.main #mainNav .btn');
+  //$captureBtn = $('#captureBtn');
 
   $tabsection = $('.main .tabsection');
 
@@ -92,10 +161,13 @@ function note(){
     var tags = "Ulcer 3";
     var time = "Tuesday March 19, 2013 at 10:45am";
 
+    if ($noteInput.val().length > 0){
+      postNote(message, tags, time);
+    }
+
     $postNoteBtn.addClass('hidden');
     $noteInput.val('');
 
-    postNote(message, tags, time);
     $noteInput.blur();
   });
 
@@ -106,16 +178,27 @@ function note(){
   //$noteInput.focus(function(){
   $noteInput.on('touchstart', function(){
     $('.tabsection').addClass('full');
+
+    $navBtns.hide();
     $postNoteBtn.removeClass('hidden');
-    $captureBtn.removeClass('btnBlue');
+    $postNoteBtn.show();
+    $cancelNoteBtn.removeClass('hidden');
+    $cancelNoteBtn.show();
+
+    //$captureBtn.removeClass('btnBlue');
     window.scrollTo(0,0);
     setTimeout(function(){$noteInput.focus();}, 500);
   });
 
   $noteInput.blur(function(){
     $('.tabsection').removeClass('full');
-    $captureBtn.addClass('btnBlue');
+    //$captureBtn.addClass('btnBlue');
+
+    $navBtns.show();
     $postNoteBtn.addClass('hidden');
+    $postNoteBtn.hide();
+    $cancelNoteBtn.addClass('hidden');
+    $cancelNoteBtn.hide();
   });
 
   // Show the 'post' button only when there's content.

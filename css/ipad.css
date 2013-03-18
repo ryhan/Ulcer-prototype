@@ -478,17 +478,18 @@ ul.notes .tags{
 
 ul.notes .newNote{
   position: relative;
-  padding-bottom: 0;
+  /*padding-bottom: 0;*/
 }
 
 ul.notes .newNote textarea{
   position: relative;
-  top: -30px;
+  /*top: -30px;*/
+  top: 0;
   width: -webkit-calc(100% - 30px);
 }
 ul.notes .newNote .postNote{
   position: relative;
-  top: -30px;
+  /*top: -30px;*/
   line-height: normal;
 }
 
