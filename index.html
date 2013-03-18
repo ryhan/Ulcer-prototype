@@ -80,14 +80,14 @@
         <nav class="tabs">
           <!--<div class="btn">New Ulcer</div> -->
           <ul class="tabs">
-            <li class="selected">Ulcers</li>
-            <li>Reminders</li>
-            <li>Notes</li>
+            <li id="ulcerTab" class="selected">Ulcers</li>
+            <li id="reminderTab">Reminders</li>
+            <li id="noteTab">Notes</li>
           </ul>
         </nav>
       </div>
       <div class="tabsection">
-        <div class="tabcontent">
+        <div id="ulcerList" class="tabcontent hidden">
           <!-- List of ulcers -->
           <ul class="ulcers">
             <li>
@@ -117,6 +117,29 @@
               </li>
           </ul>
         </div>
+        <div id="reminderList" class="tabcontent hidden">
+          <!-- List of reminders -->
+          <ul class="reminders">
+            <li>
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Rotate Patient
+              <div class="time">In 26 Minutes</div></li>
+            <li class="complete">
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Educate Patient about Pressure Ulcers
+              <div class="time">Today</div></li>
+            <li>
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Re-examine Ulcer 2 (Upper Right Thigh)
+              <div class="time">Tomorrow</div></li>
+          </ul>
+        </div>
+        <div id="noteList" class="tabcontent hidden">
+          <!-- List of notes -->
+          <ul class="notes">
+            <li>a note</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -130,5 +153,6 @@
   <!-- Scripts -->
   <script src="js/jquery.js"></script>
   <script src="js/underscore.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

@@ -60,7 +60,7 @@ aside{
   visibility: hidden;
 }
 
-@media all and (max-width: 699px) {
+@media all and (max-width: 800px) {
   .portraitOnly{
     visibility: visible;
   }
@@ -284,19 +284,22 @@ ul.tabs li:active{
   background: -webkit-linear-gradient(top, #BEC1CA, #EEE);
   box-shadow: inset 0 2px 3px rgba(0,0,0,0.2);
 }
+
+.tabcontent{
+  opacity: 1;
+  z-index: 1;
+  display: block;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+.tabcontent.hidden{
+  opacity: 0;
+  z-index: -1;
+  display: none;
+}
 /*****************************************************************************
 Ulcer List
 *****************************************************************************/
 
-.newUlcer{
-  display: inline-block;
-  width: 100px;
-  height: 30px;
-  background-color: red;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
 ul.ulcers{
   list-style-type: none;
   margin: 0;
@@ -307,6 +310,7 @@ ul.ulcers li{
   position: relative;
   padding: 30px;
   padding-left: 180px;
+  padding-left: 160px;
 }
 ul.ulcers li img{
   height: 80px;
@@ -322,6 +326,76 @@ ul.ulcers .ulcerDescription{
   color: #444;
 }
 
+/*****************************************************************************
+Reminder List
+*****************************************************************************/
+ul.reminders{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.reminders li{
+  position: relative;
+  padding: 30px;
+  padding-left: 120px;
+  padding-right: 260px;
+  border-bottom: 1px solid #CCC;
+  font-size: 20px;
+  color: #444;
+}
+ul.reminders .time{
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  width: 200px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+ul.reminders .checkbox{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 4px;
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  background: -webkit-linear-gradient(top,#F7E064, #F7CA19, #EEB70D);
+  background-color: #E2B543;
+  border: 1px solid #9A692E;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+ul.reminders .checkbox img{
+   -webkit-user-select: none;
+  width: 20px;
+  opacity: 0;
+  z-index: -1;
+}
+
+ul.reminders li.complete{
+  background-color: #EEE;
+  color: #AAA;
+}
+ul.reminders li.complete .checkbox{
+  border: 1px solid #888;
+  background: -webkit-linear-gradient(top, #CCC, #EEE);
+}
+
+ul.reminders li.complete .checkbox img{
+  opacity: 0.3;
+  z-index: 1;
+  -webkit-animation: checkOff 0.5s;
+}
+
+@-webkit-keyframes checkOff {
+  0%   { opacity: 0; -webkit-transform: scale(3); }
+  50% { opacity: 0.5; -webkit-transform: scale(0.7); }
+  75% { opacity: 0.5; -webkit-transform: scale(1.2); }
+  100% { opacity: 0.5; -webkit-transform: scale(1); }
+}
 
 
 
