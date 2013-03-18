@@ -69,6 +69,8 @@ function note(){
   $postNoteBtn = $('#postNoteBtn');
   $noteForm = $('#noteList li.newNote');
 
+  $captureBtn = $('#captureBtn');
+
   $tabsection = $('.main .tabsection');
 
   var postNote = function(message, tag, date){
@@ -105,12 +107,14 @@ function note(){
   $noteInput.on('touchstart', function(){
     $('.tabsection').addClass('full');
     $postNoteBtn.removeClass('hidden');
+    $captureBtn.removeClass('btnBlue');
     window.scrollTo(0,0);
     setTimeout(function(){$noteInput.focus();}, 500);
   });
 
   $noteInput.blur(function(){
     $('.tabsection').removeClass('full');
+    $captureBtn.addClass('btnBlue');
     $postNoteBtn.addClass('hidden');
   });
 
