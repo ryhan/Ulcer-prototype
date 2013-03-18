@@ -145,6 +145,12 @@ aside ul.list li.selected p{
 Patient Information
 *****************************************************************************/
 
+.main{
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 .main header{
   background: -webkit-linear-gradient(top, #C0C0C0, #EEE);
   background-color: #CCC;
@@ -180,6 +186,7 @@ Patient Information
 .main .testtarget .paper{
   position: absolute;
   top: -10px;
+  right: 40px;
   display: inline-block;
   width: 150px;
   height: 180px;
@@ -197,6 +204,21 @@ Patient Information
 
 nav.tabs{
   text-align: center;
+}
+
+.main{
+  overflow: visible;
+}
+
+.tabdivider{
+  height: 45px;
+}
+
+.tabsection{
+  position: relative;
+  height: -webkit-calc(100% - 325px);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 ul.tabs{
@@ -242,6 +264,37 @@ ul.tabs li:active{
   background: -webkit-linear-gradient(top, #BEC1CA, #EEE);
   box-shadow: inset 0 2px 3px rgba(0,0,0,0.2);
 }
+/*****************************************************************************
+Ulcer List
+*****************************************************************************/
+ul.ulcers{
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+ul.ulcers li{
+  border-bottom: 1px solid #CCC;
+  position: relative;
+  padding: 30px;
+  padding-left: 180px;
+}
+ul.ulcers li img{
+  height: 80px;
+  display: inline-block;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+}
+ul.ulcers .ulcerDescription{
+  font-size: 16px;
+  line-height: 24px;
+  color: #444;
+}
+
+
+
+
 
 /*
 ul.tabs{
