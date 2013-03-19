@@ -1,5 +1,6 @@
 /* app.js */
 $(function() {
+
   patientTabs();
   reminders();
   note();
@@ -234,8 +235,10 @@ function newulcerPane(){
 
 function newbradenPane(){
 
+  // toggle Braden panel
   var $bradenBtn = $('#bradenBtn');
   var $cancelBradenBtn = $('#cancelBradenBtn');
+  var $saveBradenBtn = $('#saveBradenBtn');
 
   var $bradenScalePane = $('#bradenScalePane');
 
@@ -246,4 +249,24 @@ function newbradenPane(){
   $cancelBradenBtn.bind('touchstart', function(){
     $bradenScalePane.addClass('hidden');
   });
+  $saveBradenBtn.bind('touchstart', function(){
+    $bradenScalePane.addClass('hidden');
+  });
+
+  //$bradenScalePane.removeClass('hidden');
+
+  // toggle step collapsed state
+  
+  myScroll = new iScroll('bradenWrapper');
+  
+
+  $bradenSteps = $('#bradenScalePane ul.steps > li');
+  $bradenSteps.on('click', function(e){
+    $(this).toggleClass('collapsed');
+    myScroll.refresh();
+  });
+
+
+  
+
 };

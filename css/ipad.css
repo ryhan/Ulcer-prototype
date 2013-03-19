@@ -511,6 +511,7 @@ Add Ulcer View
   overflow: hidden;
   z-index: 10;
   opacity: 1;
+  visibility: visible;
   
   -webkit-transition: all 1s ease-in-out;
   -webkit-transform: translate(0px,0px);
@@ -518,7 +519,9 @@ Add Ulcer View
 .view.hidden{
   opacity: 0;
   z-index: 1;
-  -webkit-transform: translate(0px,3000px);
+  visibility: hidden;
+  top: 2000px;
+  -webkit-transform: translate(0px,4000px);
   /*-webkit-transform: translate(500px,0);*/
 }
 .view .viewContent{
@@ -530,6 +533,7 @@ Add Ulcer View
   height: -webkit-calc(100% - 45px);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate(0px,0px);
 }
 
 #addUlcerPane .viewContent, #bradenScalePane .viewContent{
@@ -539,6 +543,141 @@ Add Ulcer View
 /***********************
 Braden (plus some above)
 ***********************/
+
+
+ul.steps{
+  list-style-type: none;
+  margin: 30px;
+  padding: 0;
+
+  font-size: 16px;
+  line-height: 20px;
+}
+
+ul.steps > li{
+  background-color: #EEE;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #444;
+  padding: 40px;
+  padding-top: 40px;
+  padding-left: 250px;
+  position: relative;
+  margin-bottom: 30px;
+  min-height: 100px;
+  -webkit-transform: translate(0px,0px);
+}
+ul.steps > li .stepName{
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  font-size: 20px;
+  color: #222;
+}
+
+ul.steps > li .stepDesc{
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  width: 190px;
+  font-size: 14px;
+}
+
+ul.steps > li .stepProgress{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  font-size: 14px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: #CCC;
+  padding: 5px 10px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #444;
+  border-left: 1px solid #444;
+}
+
+ul.steps ul.stepOptions{
+  list-style-type: none;
+}
+ul.steps ul.stepOptions li{
+  display: block;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+ul.steps ul.stepOptions li strong{
+  font-size: 16px;
+  font-weight: bold;
+}
+ul.steps ul.stepOptions li.selected{
+  border-radius: 5px;
+  background: -webkit-linear-gradient(top,#F7E064, #F7CA19, #EEB70D);
+  background-color: #E2B543;
+  border: 1px solid #9A692E;
+}
+
+
+ul.steps > li.collapsed ul.stepOptions li{
+  display: none;
+}
+ul.steps > li.collapsed ul.stepOptions li.selected,
+ul.steps > li ul.stepOptions li{
+  display: block;
+}
+
+ul.steps > li.collapsed{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+
+  /*-webkit-animation: collapseStep 0.4s 1;*/
+
+}
+
+/*
+@-webkit-keyframes collapseStep {
+  0%   { min-height: 300px;}
+  100% { min-height: 100px;}
+}
+*/
+
+ul.steps > li.collapsed .stepName{
+  top: 30px;
+  color: #222;
+}
+
+ul.steps > li.collapsed .stepDesc{
+  top: 60px;
+}
+ul.steps > li.collapsed ul.stepOptions li.selected{
+  position: relative;
+  top: 10px;
+  border: 1px solid #888;
+  background: -webkit-linear-gradient(top, #EEE, #FFF);
+  margin-bottom: 20px;
+}
+ul.steps > li.collapsed .stepProgress{
+  opacity: 0;
+}
+
+footer.bradenConclusion{
+  margin: 40px 30px 60px 30px;
+
+  padding: 30px 40px;
+  background-color: #DDD;
+  border: 1px solid #AF5031;
+  border-radius: 5px;
+  box-shadow: 
+    inset 0 0 3px #FD5858;
+  color: #AF5031;
+
+  font-size: 20px;
+  text-align: center;
+}
+
 
 #bradenScalePane table{
   background: -webkit-linear-gradient(top, #EBEBEB, #FAFAFA);
