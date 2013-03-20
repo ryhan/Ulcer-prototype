@@ -45,6 +45,7 @@ h1{
 }
 
 
+input[type="number"],
 input[type="text"],
 textarea{
   width: 100%;
@@ -66,6 +67,13 @@ textarea{
 
   -webkit-transition: height 0.3s;
 }
+
+input[type="number"]{
+  display: inline-block;
+  width: 120px;
+}
+
+input[type="number"]:focus,
 input[type="text"]:focus,
 textarea:focus{
   background-color: white;
