@@ -61,8 +61,9 @@
         <div class="btn btnLeft portraitOnly">Patient List</div>
         <div id="cancelNoteBtn" class="postNote btn btnLeft hidden">Cancel</div>
         <!--<div class="btn">Capture</div>-->
-        <div id="captureBtn" class="btn btnBlue">Capture</div>
-        <div id="addUlcerBtn" class="btn">Add Ulcer</div>
+        <!--div id="captureBtn" class="btn btnBlue">Capture</div>-->
+        <div id="addUlcerBtn" class="btn btnBlue">Add Ulcer</div>
+        <div id="testRiskBtn" class="btn">Test Risk</div>
         <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
       </nav>
 
@@ -70,7 +71,9 @@
       <header>
         <div class="testtarget">
           <div class="paper"></div>
-          <div class="paper"></div>
+          <div class="paper">
+            <img src="img/risk.png"/>
+          </div>
         </div>
         <h1> Stephanie Clay</h1>
         <ul>
@@ -101,6 +104,10 @@
                 Start Date - Wednesday March 6, 2013<br/>
                 Last Assessment - 2 Hours ago
               </div>
+              <div class="btnArray">
+                <div class="btn assessUlcerBtn">Assess</div>
+                <div class="btn">History</div>
+              </div>
               </li>
             <li>
               <img class="ulcer" src="img/ulcer2.png"/>
@@ -109,6 +116,10 @@
                 Start Date - Thursday March 7, 2013<br/>
                 Last Assessment - 6 Hours ago
               </div>
+              <div class="btnArray">
+                <div class="btn assessUlcerBtn">Assess</div>
+                <div class="btn">History</div>
+              </div>
               </li>
             <li>
               <img class="ulcer" src="img/ulcer3.png"/>
@@ -116,6 +127,10 @@
                 <strong>Ulcer 3 - Lower Back</strong><br/>
                 Start Date - Thursday March 7, 2013<br/>
                 Last Assessment - 4 Hours ago
+              </div>
+              <div class="btnArray">
+                <div class="btn assessUlcerBtn">Assess</div>
+                <div class="btn">History</div>
               </div>
               </li>
           </ul>
@@ -135,10 +150,14 @@
             <li>
               <div class="checkbox"><img src="img/check.png"/></div>
               Rotate Patient
-              <div class="time">In 26 Minutes</div></li>
-            <li class="complete">
+              <div class="time">In 2 Hours</div></li>
+            <li class="">
               <div class="checkbox"><img src="img/check.png"/></div>
               Educate Patient about Ulcers
+              <div class="time">Today</div></li>
+            <li class="">
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Complete Braden Risk Assessment
               <div class="time">Today</div></li>
             <li>
               <div class="checkbox"><img src="img/check.png"/></div>
@@ -193,33 +212,197 @@
       <div id="addUlcerPane" class="view addUlcer hidden">
         <nav>
           <div id="cancelUlcerPaneBtn" class="btn btnLeft">Cancel</div>
-          <div class="btn btnBlue">Save</div>
+          <div id="addUlcerPaneBtn" class="btn btnBlue">Save</div>
           <h1> New Ulcer </h1>
         </nav>
-        <div class="viewContent">
+        <!-- Begin Add Ulcer Content -->
+        <div class="viewContent" id="addUlcerWrapper">
+          <div>
           <ul class="steps">
-            <li><strong>Step 1 - Location</strong>
-              <input type="text" value="Anterior Deltoid"/></li>
+            <li id="addUlcerPhoto"><div class="stepName">Photo</div>
+                <div class="stepProgress">1 of 6</div>
+                <input id="addUlcerPhotoInput" type=file accept="image/*"/>
+                <img src="img/ulcer1.png"/>
+              </li>
 
-            <li><strong>Step 2 - Take a picture</strong>
-              <input type="text" value="Anterior Deltoid"/></li>
+            <li><div class="stepName">Location</div>
+                <div class="stepDesc">Tap to mark a location.</div>
+                <div class="stepProgress">2 of 6</div>
+                <input type="text" value="Anterior Deltoid"/>
+                <img id="bodyImg" src="img/body.jpg"/>
+                </li>
 
-            <li><strong>Step 3 - Dimensions</strong><br/>
-              <span>Length</span> <input type="number" value="2.3"/>cm<br/>
-              <span>Width</span> <input type="number" value="3.0"/>cm</br />
-              <span>Depth</span> <input type="number" value="0.3"/>cm</li>
+            <li><div class="stepName"> Dimensions</div>
+                <div class="stepProgress">3 of 6</div>
+                <ul class="stepOptions">
+                  <li>
+                    <strong>Length</strong><br/> <input type="number" value="2.3"/>cm
+                  </li>
+                  <li>
+                    <strong>Width</strong><br/> <input type="number" value="3.4"/>cm
+                  </li>
 
-            <li><strong>Step 4 - Moisture</strong>
-              <input type="text" value="Not very"/></li>
+                  <li>
+                    <strong>Depth</strong><br/> <input type="number" value="0.2"/>cm
+                  </li>
+                </ul>
+              </li>
 
-            <li><strong>Step 5 - Stage</strong>
-              <input type="text" value="Stage 2"/></li>
+            <li><div class="stepName"> Moisture</div>
+                <div class="stepDesc"> 
+                  Degree to which skin is exposed to moisture
+                </div>
+                <div class="stepProgress">4 of 6</div>
+                <ul class="stepOptions">
+                  <li>
+                    <strong>1. Constantly Moist</strong><br/> Skin is kept moist almost constantly by 
+                    perspiration, urine, etc. Dampness detected every time patient is
+                    moved or turned.
+                  </li>
+                  <li>
+                    <strong>2. Very Moist</strong><br/> Skin is often, but not always moist. Linen must be 
+                    changed at least once a shift.
+                  </li>
 
-            <li><strong>Final Notes</strong>
-              <textarea></textarea>
+                  <li class="selected">
+                    <strong>3. Occasionally Moist</strong><br/> Skin is occasionally moist, requiring an extra
+                    linen change approximately once a day.
+                  </li>
+
+                  <li>
+                    <strong>4. Rarely Moist</strong><br/> Skin is usually dry, linen only requires changing
+                    at routine intervals.
+                  </li>
+                </ul>
+              </li>
+              <li><div class="stepName"> Stage</div>
+                <div class="stepProgress">5 of 6</div>
+                <ul class="stepOptions">
+                  <li>
+                    <strong>Stage 1</strong><br/> Nonblanchable erythema of intact skin, the heralding lesion of skin ulceration. In individuals with darker skin, discoloration of the skin, warmth, edema, induration, or hardness may also be indicators.
+                  </li>
+                  <li>
+                    <strong>Stage 2</strong><br/> Partial thickness skin loss involving epidermis, dermis, or both. The ulcer is superficial and presents clinically as an abrasion, blister, or shallow crater.
+                  </li>
+
+                  <li class="selected">
+                    <strong>Stage 3</strong><br/> Full thickness skin loss involving damage to or necrosis of subcutaneous tissue that may extend down to, but not through, underlying fascia. The ulcer presents clinically as a deep crater with or without undermining of adjacent tissue.
+                  </li>
+
+                  <li>
+                    <strong>Stage 4</strong><br/> Full thickness skin loss with extensive destruction, tissue necrosis, or damage to muscle, bone, or supporting structures (e.g., tendon, joint capsule). Undermining and sinus tracts also may be associated with Stage 4 pressure ulcers.
+                  </li>
+                </ul>
+              </li>
+
+            <li><div class="stepName"> Final Notes</div>
+                <div class="stepDesc"> Add any comments here.</div>
+                <div class="stepProgress">5 of 6</div>
+              <textarea style="height: 150px;"></textarea>
           </ul>
+          <br/>
+          <br/>
         </div>
+        </div>
+        <!-- End Add Ulcer content -->
       </div>
+
+<!-- Begin Assess Ulcer Pane -->
+<div id="assessUlcerPane" class="view assessUlcer hidden">
+  <nav>
+    <div id="cancelAssessUlcerPaneBtn" class="btn btnLeft">Cancel</div>
+    <div id="saveAssessUlcerPaneBtn" class="btn btnBlue">Save</div>
+    <h1> Assess Ulcer </h1>
+  </nav>
+  <div class="viewContent" id="assessUlcerWrapper">
+    <div>
+    <ul class="steps">
+
+      <li><div class="stepName"> Moisture</div>
+          <div class="stepDesc"> 
+            Degree to which skin is exposed to moisture
+          </div>
+          <div class="stepProgress">1 of 5</div>
+          <ul class="stepOptions">
+            <li>
+              <strong>1. Constantly Moist</strong><br/> Skin is kept moist almost constantly by 
+              perspiration, urine, etc. Dampness detected every time patient is
+              moved or turned.
+            </li>
+            <li>
+              <strong>2. Very Moist</strong><br/> Skin is often, but not always moist. Linen must be 
+              changed at least once a shift.
+            </li>
+
+            <li class="selected">
+              <strong>3. Occasionally Moist</strong><br/> Skin is occasionally moist, requiring an extra
+              linen change approximately once a day.
+            </li>
+
+            <li>
+              <strong>4. Rarely Moist</strong><br/> Skin is usually dry, linen only requires changing
+              at routine intervals.
+            </li>
+          </ul>
+        </li>
+        <li><div class="stepName"> Stage</div>
+          <div class="stepProgress">2 of 5</div>
+          <ul class="stepOptions">
+            <li>
+              <strong>Stage 1</strong><br/> Nonblanchable erythema of intact skin, the heralding lesion of skin ulceration. In individuals with darker skin, discoloration of the skin, warmth, edema, induration, or hardness may also be indicators.
+            </li>
+            <li>
+              <strong>Stage 2</strong><br/> Partial thickness skin loss involving epidermis, dermis, or both. The ulcer is superficial and presents clinically as an abrasion, blister, or shallow crater.
+            </li>
+
+            <li class="selected">
+              <strong>Stage 3</strong><br/> Full thickness skin loss involving damage to or necrosis of subcutaneous tissue that may extend down to, but not through, underlying fascia. The ulcer presents clinically as a deep crater with or without undermining of adjacent tissue.
+            </li>
+
+            <li>
+              <strong>Stage 4</strong><br/> Full thickness skin loss with extensive destruction, tissue necrosis, or damage to muscle, bone, or supporting structures (e.g., tendon, joint capsule). Undermining and sinus tracts also may be associated with Stage 4 pressure ulcers.
+            </li>
+          </ul>
+        </li>
+
+       <li><div class="stepName"> Dimensions</div>
+          <div class="stepDesc"> Use a ruler to measure the dimensions of the Ulcer.</div>
+          <div class="stepProgress">3 of 5</div>
+          <ul class="stepOptions">
+            <li>
+              <strong>Length (cm)</strong><br/> <input type="number" value="2.3"/>
+            </li>
+            <li>
+              <strong>Width(cm)</strong><br/> <input type="number" value="3.4"/>
+            </li>
+
+            <li>
+              <strong>Depth(cm)</strong><br/> <input type="number" value="0.2"/>
+            </li>
+          </ul>
+        </li>
+
+      <li id="assessUlcerPhoto"><div class="stepName">Photo</div>
+          <div class="stepProgress">4 of 5</div>
+          <input id="assessUlcerPhotoInput" type=file accept="image/*"/>
+          <p>Take a photo</p>
+          <br/>
+          <br/>
+        </li>
+
+      <li><div class="stepName"> Final Notes</div>
+          <div class="stepDesc"> Add any comments here.</div>
+          <div class="stepProgress">5 of 5</div>
+        <textarea style="height: 150px;"></textarea>
+    </ul>
+    <br/>
+    <br/>
+  </div>
+  </div>
+</div>
+<!-- END Assess -->
+
+
 
       <div id="bradenScalePane" class="view bradenScale hidden">
         <nav>

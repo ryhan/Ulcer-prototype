@@ -229,13 +229,20 @@ Patient Information
   display: inline-block;
   width: 150px;
   height: 180px;
-  padding: 10px;
+  padding: 0;
 
   background-color: white;
   border-radius: 2px;
   border: 1px solid #666;
   box-shadow: 0 2px 5px rgba(0,0,0,0.4);
   -webkit-transform:rotate(3deg); 
+}
+
+.main .testtarget .paper img{
+  position: relative;
+  top: 0px;
+  right: 0px;
+  width: 150px;
 }
 .main .testtarget .paper:nth-child(1){
   -webkit-transform:rotate(-2deg); 
@@ -360,6 +367,37 @@ ul.ulcers .ulcerDescription{
 ul.ulcers li strong{
   font-size: 18px;
   font-weight: normal;
+}
+
+ul.ulcers .btnArray{
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  width: 250px;
+  height: 50px;
+}
+
+ul.ulcers .btnArray .btn{
+
+  background: -webkit-linear-gradient(top, #FFF, #F0F0F0);
+  border: 1px solid #BBB;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  height: 50px;
+  width: 100px;
+  text-align: center;
+  padding: 15px 10px;
+
+  color: #666;
+  text-shadow: 0 1px white;
+
+}
+
+ul.ulcers .btnArray .btn:active{
+
+  background: -webkit-linear-gradient(top, #DDD, #E0E0E0);
+  border: 1px solid #888;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,0.3);
+
 }
 
 /*****************************************************************************
@@ -511,16 +549,13 @@ Add Ulcer View
   overflow: hidden;
   z-index: 10;
   opacity: 1;
-  visibility: visible;
   
-  -webkit-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out, z-index 0.5s;
   -webkit-transform: translate(0px,0px);
 }
 .view.hidden{
   opacity: 0;
-  z-index: 1;
-  visibility: hidden;
-  top: 2000px;
+  z-index: -1;
   -webkit-transform: translate(0px,4000px);
   /*-webkit-transform: translate(500px,0);*/
 }
@@ -539,11 +574,27 @@ Add Ulcer View
 #addUlcerPane .viewContent, #bradenScalePane .viewContent{
   background: -webkit-linear-gradient(top, #BBB, #EEE);
 }
+#addUlcerPane input[type='text']{
+  width: 320px;
+}
+
+#addUlcerPane img{
+  margin-top: 15px;
+  width: 340px;
+}
+
+#addUlcerPhotoInput{
+  /* -webkit-transform: translate(0px,2000px); */
+}
 
 /***********************
 Braden (plus some above)
 ***********************/
 
+
+#bradenBtn{
+  /* color: #C03B29; */
+}
 
 ul.steps{
   list-style-type: none;

@@ -5,6 +5,7 @@ $(function() {
   reminders();
   note();
   newulcerPane();
+  assessUlcerPane();
   newbradenPane();
 });
 
@@ -47,9 +48,9 @@ function patientTabs(){
   $reminderTab.bind('touchstart', showReminders);
   $noteTab.bind('touchstart', showNotes);
 
-  //showUlcers();
+  showUlcers();
   //showReminders();
-  showNotes();
+  //showNotes();
 };
 
 
@@ -115,8 +116,7 @@ function reminders(){
   var postReminder = function(message, time){
     var newli = $('<li />');
 
-    var checkbox = $('<div class="checkbox" />');
-    checkbox.innerHTML = '<img src="img/check.png"/>';
+    var checkbox = $('<div class="checkbox" />').html('<img src="img/check.png"/>')
 
     var date = $('<div class="time" />').text(time);
 
@@ -220,6 +220,7 @@ function newulcerPane(){
 
   var $addUlcerBtn = $('#addUlcerBtn');
   var $cancelUlcerPaneBtn = $('#cancelUlcerPaneBtn');
+  var $addUlcerPaneBtn = $('#addUlcerPaneBtn');
 
   var $addUlcerPane = $('#addUlcerPane');
 
@@ -230,19 +231,83 @@ function newulcerPane(){
   $cancelUlcerPaneBtn.bind('touchstart', function(){
     $addUlcerPane.addClass('hidden');
   }); 
+  $addUlcerPaneBtn.bind('touchstart', function(){
+    $addUlcerPane.addClass('hidden');
+  })
+
+  myScroll = new iScroll('addUlcerWrapper');
+
+  function protectInputs(){
+    $('#addUlcerPane input').on('touchstart', function(e){
+      //e.preventDefault();
+      console.log('hi')
+      $(this).click();
+      $(this).focus();
+    });
+
+    $('#addUlcerPhoto img').on('touchstart', function(e){
+      $('#addUlcerPhotoInput').click();
+    });
+  }
+  setTimeout(protectInputs, 500);
 
 };
+
+
+function assessUlcerPane(){
+
+  var $assessUlcerBtn = $('.assessUlcerBtn');
+  var $cancelAssessUlcerPaneBtn = $('#cancelAssessUlcerPaneBtn');
+  var $saveAssessUlcerPaneBtn = $('#saveAssessUlcerPaneBtn');
+
+  var $assessUlcerPane = $('#assessUlcerPane');
+
+  $assessUlcerBtn.bind('touchstart', function(){
+    $assessUlcerPane.removeClass('hidden');
+  }); 
+
+  $cancelAssessUlcerPaneBtn.bind('touchstart', function(){
+    $assessUlcerPane.addClass('hidden');
+  }); 
+  $saveAssessUlcerPaneBtn.bind('touchstart', function(){
+    $assessUlcerPane.addClass('hidden');
+  })
+
+  myScroll = new iScroll('assessUlcerWrapper');
+
+  function protectInputs(){
+    $('#assessUlcerPane input').on('touchstart', function(e){
+      //e.preventDefault();
+      console.log('hi')
+      $(this).click();
+      $(this).focus();
+    });
+
+    $('#assessUlcerPhoto img').on('touchstart', function(e){
+      $('#assessUlcerPhotoInput').click();
+    });
+  }
+  setTimeout(protectInputs, 500);
+
+};
+
+
+
 
 function newbradenPane(){
 
   // toggle Braden panel
   var $bradenBtn = $('#bradenBtn');
+  var $testRiskBtn = $('#testRiskBtn');
   var $cancelBradenBtn = $('#cancelBradenBtn');
   var $saveBradenBtn = $('#saveBradenBtn');
 
   var $bradenScalePane = $('#bradenScalePane');
 
   $bradenBtn.bind('touchstart', function(){
+    $bradenScalePane.removeClass('hidden');
+  });
+  $testRiskBtn.bind('touchstart', function(){
     $bradenScalePane.removeClass('hidden');
   });
 
@@ -258,7 +323,6 @@ function newbradenPane(){
   // toggle step collapsed state
   
   myScroll = new iScroll('bradenWrapper');
-  
 
   $bradenSteps = $('#bradenScalePane ul.steps > li');
   $bradenSteps.on('click', function(e){
