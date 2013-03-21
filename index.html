@@ -106,7 +106,7 @@
               </div>
               <div class="btnArray">
                 <div class="btn assessUlcerBtn">Assess</div>
-                <div class="btn">History</div>
+                <div class="btn historyUlcerBtn">History</div>
               </div>
               </li>
             <li>
@@ -118,7 +118,7 @@
               </div>
               <div class="btnArray">
                 <div class="btn assessUlcerBtn">Assess</div>
-                <div class="btn">History</div>
+                <div class="btn historyUlcerBtn">History</div>
               </div>
               </li>
             <li>
@@ -130,7 +130,7 @@
               </div>
               <div class="btnArray">
                 <div class="btn assessUlcerBtn">Assess</div>
-                <div class="btn">History</div>
+                <div class="btn historyUlcerBtn">History</div>
               </div>
               </li>
           </ul>
@@ -402,6 +402,55 @@
 </div>
 <!-- END Assess -->
 
+
+<!-- Begin Ulcer History Pane -->
+<div id="historyUlcerPane" class="view historyUlcer">
+  <nav>
+    <div id="cancelHistoryUlcerPaneBtn" class="btn btnLeft">Cancel</div>
+    <div id="saveHistoryUlcerPaneBtn" class="btn btnBlue">Save</div>
+    <h1> Ulcer History </h1>
+  </nav>
+  <div class="viewContent" id="historyUlcerWrapper">
+    <img id="graphImg" src="img/graph.png"/>    
+    <table id="ulcerData">
+      <th>Date</th>
+      <th>Assessment Score</th>
+      <th>Size</th>                
+      <th>Critical</th>   
+      <tr class="odd">
+        <td>2/28/2013</td>
+        <td>15</td>
+        <td>2" x 3"</td>                
+        <td>yes</td>        
+      </tr>
+      <tr>
+        <td>2/21/2013</td>
+        <td>14</td>
+        <td>4" x 5"</td>                
+        <td>no</td>              
+      </tr>  
+      <tr class="odd">
+        <td>2/28/2013</td>
+        <td>7</td>
+        <td>5" x 3"</td>                                
+        <td>yes</td>           
+      </tr>
+      <tr>
+        <td>2/21/2013</td>
+        <td>4</td>
+        <td>7" x 2"</td>                             
+        <td>no</td>             
+      </tr> 
+      <tr class="odd">
+        <td>2/28/2013</td>
+        <td>3</td>
+        <td>2" x 1"</td>                              
+        <td>yes</td>            
+      </tr>              
+    </table>
+  </div>
+</div>
+<!-- END Assess -->
 
 
       <div id="bradenScalePane" class="view bradenScale hidden">
