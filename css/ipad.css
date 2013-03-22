@@ -763,6 +763,30 @@ td.bdnAns{
   border-bottom: none;
 }
 
+/*****************************************************************************
+History
+*****************************************************************************/
+#graphImg {
+  display: block;
+  margin: auto;
+}
+
+#ulcerData {
+  background: -webkit-linear-gradient(top, #EBEBEB, #FAFAFA);
+  margin: 45px auto 100px;  
+  box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+  width: 80%;  
+  font-size: 16px;
+  margin-top: 0;
+}
+
+#ulcerData td {
+  text-align: center;
+}
+
+#ulcerData .odd {
+  background-color: darkgrey;
+}
 
 
 /*****************************************************************************
