@@ -7,6 +7,7 @@ $(function() {
   newulcerPane();
   assessUlcerPane();
   newbradenPane();
+  historyUlcer();  
 });
 
 // Manages Ulcer / Reminders / Notes Tabs
@@ -291,7 +292,25 @@ function assessUlcerPane(){
 
 };
 
+function historyUlcer() {
+  var $historyUlcerBtn = $('.historyUlcerBtn');
+  var $cancelHistoryUlcerPaneBtn = $('#cancelHistoryUlcerPaneBtn');
+  var $saveHistoryUlcerPaneBtn = $('#saveHistoryUlcerPaneBtn');
 
+  var $historyUlcerPane = $('#historyUlcerPane');
+  $historyUlcerBtn.bind('touchstart', function(){
+    $historyUlcerPane.removeClass('hidden');
+  }); 
+  $cancelHistoryUlcerPaneBtn.bind('touchstart', function(){
+    console.log('hi');
+    $historyUlcerPane.addClass('hidden');
+  }); 
+  $saveHistoryUlcerPaneBtn.bind('touchstart', function(){
+    console.log('hi');
+    $historyUlcerPane.addClass('hidden');
+  })
+
+}
 
 
 function newbradenPane(){
