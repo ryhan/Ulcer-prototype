@@ -345,6 +345,8 @@ function newbradenPane(){
 
   var bradenScore = 0;
   var risk;
+ 
+  var changed = false;
 
   $bradenSteps = $('#bradenScalePane ul.steps > li');
   $bradenOptions = $('#bradenScalePane ul.stepOptions > li');
@@ -359,6 +361,8 @@ function newbradenPane(){
     console.log($bradenSelected);
     $($bradenSelected).toggleClass('selected');
 
+    changed = true;
+
     if (bradenScore <= 9) risk = 'Very High Risk';
     if (bradenScore > 9 && bradenScore <= 12) risk = 'High Risk';
     if (bradenScore > 12 && bradenScore <= 14) risk = 'Medium Risk';
@@ -367,12 +371,11 @@ function newbradenPane(){
 
     var $finalScore = $('#finalScore');
     $finalScore.text(bradenScore + ' - ' + risk);
+  });
 
+  $bradenSteps.on('click', function(e){
+    if(changed) $(this).toggleClass('collapsed');
     myScroll.refresh();
   });
-/*
-  $bradenSteps.on('click', function(e){
-    $(this).toggleClass('collapsed');
-  });
-*/
+
 };
