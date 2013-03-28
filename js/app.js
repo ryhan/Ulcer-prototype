@@ -345,37 +345,69 @@ function newbradenPane(){
 
   var bradenScore = 0;
   var risk;
- 
-  var changed = false;
 
   $bradenSteps = $('#bradenScalePane ul.steps > li');
   $bradenOptions = $('#bradenScalePane ul.stepOptions > li');
-  $bradenOptions.on('click', function(e){  
-    var $bradenSelected = '#' + $(this).attr('id');
-    if ($bradenSelected.indexOf('One') >= 0) bradenScore += 1;
-    if ($bradenSelected.indexOf('Two') >= 0) bradenScore += 2;
-    if ($bradenSelected.indexOf('Three') >= 0) bradenScore += 3;
-    if ($bradenSelected.indexOf('Four') >= 0) bradenScore += 4;
+  // $bradenOptions.on('click', function(e){  
+  //   var parent = $(this).parent();
+  //   var selected = parent.find('.selected');
+  //   if (selected) {
+  //     selected
+  //   }
+  //   parent.children().index(this);
+  //   // var $bradenSelected = '#' + $(this).attr('id');
+  //   // if ($bradenSelected.indexOf('One') >= 0) bradenScore += 1;
+  //   // if ($bradenSelected.indexOf('Two') >= 0) bradenScore += 2;
+  //   // if ($bradenSelected.indexOf('Three') >= 0) bradenScore += 3;
+  //   // if ($bradenSelected.indexOf('Four') >= 0) bradenScore += 4;
  
-    console.log(bradenScore);
-    console.log($bradenSelected);
-    $($bradenSelected).toggleClass('selected');
+  //   // console.log(bradenScore);
+  //   // console.log($bradenSelected);
+  //   // $($bradenSelected).toggleClass('selected');
 
-    changed = true;
+  //   if (bradenScore <= 9) risk = 'Very High Risk';
+  //   if (bradenScore > 9 && bradenScore <= 12) risk = 'High Risk';
+  //   if (bradenScore > 12 && bradenScore <= 14) risk = 'Medium Risk';
+  //   if (bradenScore > 14 && bradenScore <= 18) risk = 'Low Risk';
+  //   if (bradenScore > 19) risk = 'No Risk';
 
-    if (bradenScore <= 9) risk = 'Very High Risk';
-    if (bradenScore > 9 && bradenScore <= 12) risk = 'High Risk';
-    if (bradenScore > 12 && bradenScore <= 14) risk = 'Medium Risk';
-    if (bradenScore > 14 && bradenScore <= 18) risk = 'Low Risk';
-    if (bradenScore > 19) risk = 'No Risk';
+  //   var $finalScore = $('#finalScore');
+  //   $finalScore.text(bradenScore + ' - ' + risk);
+  // });
 
-    var $finalScore = $('#finalScore');
-    $finalScore.text(bradenScore + ' - ' + risk);
-  });
-
+  var $finalScore = $('#finalScore');
   $bradenSteps.on('click', function(e){
-    if(changed) $(this).toggleClass('collapsed');
-    myScroll.refresh();
+    var $target = $(e.target);
+    if ($target.hasClass('bradenOption')) {
+      var options = $(this).find('.stepOptions > li');
+      var selected = $(this).find('.stepOptions > li.selected');
+      if (selected.length > 0) {
+        selected.removeClass('selected');
+        bradenScore -= options.index(selected[0]) + 1;
+      }
+      if (selected.length === 0 ||
+          selected[0] !== e.target) {
+        $target.addClass('selected');
+        bradenScore += options.index(e.target) + 1;
+      }
+
+      if (bradenScore <= 9) risk = 'Very High Risk';
+      if (bradenScore > 9 && bradenScore <= 12) risk = 'High Risk';
+      if (bradenScore > 12 && bradenScore <= 14) risk = 'Medium Risk';
+      if (bradenScore > 14 && bradenScore <= 18) risk = 'Low Risk';
+      if (bradenScore > 19) risk = 'No Risk';
+
+      $finalScore.text(bradenScore + ' - ' + risk);
+      if ($(this).find('.stepOptions > li.selected').length === 0) {
+        $(this).removeClass('collapsed');
+        myScroll.refresh();
+      }
+    } else {
+      if ($(this).find('.selected').length > 0) {
+        $(this).toggleClass('collapsed');
+      }
+      myScroll.refresh();
+    }
   });
 
 };
