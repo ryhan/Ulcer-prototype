@@ -367,10 +367,12 @@ function newbradenPane(){
 
     var $finalScore = $('#finalScore');
     $finalScore.text(bradenScore + ' - ' + risk);
-  });
 
-  $bradenSteps.on('click', function(e){
-    $(this).toggleClass('collapsed');
     myScroll.refresh();
   });
+/*
+  $bradenSteps.on('click', function(e){
+    $(this).toggleClass('collapsed');
+  });
+*/
 };
