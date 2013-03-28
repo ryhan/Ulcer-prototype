@@ -703,15 +703,25 @@ ul.steps > li.collapsed .stepName{
 ul.steps > li.collapsed .stepDesc{
   top: 60px;
 }
+/*
 ul.steps > li.collapsed ul.stepOptions li.selected{
   position: relative;
   top: 10px;
   border: 1px solid #888;
   background: -webkit-linear-gradient(top, #EEE, #FFF);
   margin-bottom: 20px;
-}
+}*/
 ul.steps > li.collapsed .stepProgress{
   opacity: 0;
+}
+
+ul.steps li.bradenOption {
+  position: relative;
+  top: 10px;
+  border: 1px solid #888;
+  background: -webkit-linear-gradient(top, #EEE, #FFF);
+  margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 footer.bradenConclusion{
