@@ -683,9 +683,7 @@ ul.steps > li.collapsed{
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 20px;
-
-  /*-webkit-animation: collapseStep 0.4s 1;*/
-
+ /* -webkit-animation: collapseStep 0.4s 1;*/
 }
 
 /*
@@ -695,22 +693,25 @@ ul.steps > li.collapsed{
 }
 */
 
+
 ul.steps > li.collapsed .stepName{
-  top: 30px;
+  top: 25px;
   color: #222;
 }
 
 ul.steps > li.collapsed .stepDesc{
-  top: 60px;
+  top: 55px;
 }
-/*
+
+
 ul.steps > li.collapsed ul.stepOptions li.selected{
   position: relative;
   top: 10px;
   border: 1px solid #888;
   background: -webkit-linear-gradient(top, #EEE, #FFF);
   margin-bottom: 20px;
-}*/
+}
+
 ul.steps > li.collapsed .stepProgress{
   opacity: 0;
 }
