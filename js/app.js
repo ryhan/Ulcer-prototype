@@ -8,6 +8,7 @@ $(function() {
   assessUlcerPane();
   newbradenPane();
   historyUlcer();  
+  notes();
 });
 
 // Manages Ulcer / Reminders / Notes Tabs
@@ -411,3 +412,40 @@ function newbradenPane(){
   });
 
 };
+
+function notes() {
+  $('.notes').on('click', function(e) {
+    $postNewNoteBtn = $(this).siblings('.postNote');
+    $newNoteForm = $(this).siblings('.extraNotes');
+    $newNoteInput = $(this).siblings('textarea');    
+    $(this).siblings('.hidden').removeClass('hidden');    
+    $(this).next("textarea").focus();    
+    $postNewNoteBtn.bind('touchstart', function(){
+      var message = $newNoteInput.val();
+      console.log(message);
+      var time = "Tuesday March 19, 2013 at 10:45am";
+
+      if ($newNoteInput.val().length > 0){
+        postNote(message, time);
+      }
+      $newNoteInput.addClass('hidden');
+      $postNewNoteBtn.addClass('hidden');
+      $newNoteInput.val('');
+
+      $newNoteInput.blur();
+    });      
+  });
+
+  var postNote = function(message, date){
+    var date = $('<div class="time" />').text(date);
+    var message = $('<p />').text(message);
+
+    var newli = $('<li />');
+    newli.append(date);
+    newli.append(message);
+    $newNoteForm.append(newli);
+  }
+
+  //console.log($postNewNoteBtn);
+
+}
