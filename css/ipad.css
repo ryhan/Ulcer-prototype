@@ -638,6 +638,7 @@ ul.steps > li .stepProgress{
   position: absolute;
   top: 0;
   right: 0;
+  height: 30px;
   width: 100px;
   font-size: 14px;
   border-top-right-radius: 4px;
@@ -683,9 +684,7 @@ ul.steps > li.collapsed{
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 20px;
-
-  /*-webkit-animation: collapseStep 0.4s 1;*/
-
+ /* -webkit-animation: collapseStep 0.4s 1;*/
 }
 
 /*
@@ -695,14 +694,17 @@ ul.steps > li.collapsed{
 }
 */
 
+
 ul.steps > li.collapsed .stepName{
-  top: 30px;
+  top: 25px;
   color: #222;
 }
 
 ul.steps > li.collapsed .stepDesc{
-  top: 60px;
+  top: 55px;
 }
+
+
 ul.steps > li.collapsed ul.stepOptions li.selected{
   position: relative;
   top: 10px;
@@ -710,8 +712,18 @@ ul.steps > li.collapsed ul.stepOptions li.selected{
   background: -webkit-linear-gradient(top, #EEE, #FFF);
   margin-bottom: 20px;
 }
+
 ul.steps > li.collapsed .stepProgress{
   opacity: 0;
+}
+
+ul.steps li.bradenOption {
+  position: relative;
+  top: 10px;
+  border: 1px solid #888;
+  background: -webkit-linear-gradient(top, #EEE, #FFF);
+  margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 footer.bradenConclusion{
@@ -912,3 +924,51 @@ ul.tabs li.selected{
   border-bottom: 1px solid #888;
   box-shadow: none;
 }*/
+
+
+/*****************************************************************************
+Notes
+*****************************************************************************/
+
+.notes {
+  position: absolute;
+  left: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;  
+  bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.newNote {
+  width: -webkit-calc(100% - 20px);  
+}
+
+ul.extraNotes {
+  line-height: 20px;
+}
+
+ul.extraNotes li {
+  position: relative;
+  top: 10px;
+  border: 1px solid #888;
+  background: -webkit-linear-gradient(top, #EEE, #FFF);
+  margin-bottom: 20px;
+  border-radius: 4px;  
+  display: block;
+  padding: 10px 12px;
+  font-size: 12px;  
+}
+
+ul.extraNotes li div.time {
+  font-size: 12px;
+  font-weight: bold;
+  color: #222;  
+}
+
+.postNote {
+  text-align: center;
+}
