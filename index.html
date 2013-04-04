@@ -63,7 +63,7 @@
         <!--<div class="btn">Capture</div>-->
         <!--div id="captureBtn" class="btn btnBlue">Capture</div>-->
         <div id="addUlcerBtn" class="btn btnBlue">Add Ulcer</div>
-        <div id="testRiskBtn" class="btn">Test Risk</div>
+        <div id="testRiskBtn" class="btn">Assess Risk</div>
         <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
       </nav>
 
@@ -344,6 +344,10 @@
               at routine intervals.
             </li>
           </ul>
+          <ul class="extraNotes"></ul>
+          <p class="notes">Add Notes</p>
+          <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+          <div class="postNote btn btnBlue hidden">Post</div>          
         </li>
         <li><div class="stepName"> Stage</div>
           <div class="stepProgress">2 of 5</div>
@@ -363,6 +367,10 @@
               <strong>Stage 4</strong><br/> Full thickness skin loss with extensive destruction, tissue necrosis, or damage to muscle, bone, or supporting structures (e.g., tendon, joint capsule). Undermining and sinus tracts also may be associated with Stage 4 pressure ulcers.
             </li>
           </ul>
+          <ul class="extraNotes"></ul>
+          <p class="notes">Add Notes</p>
+          <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+          <div class="postNote btn btnBlue hidden">Post</div>          
         </li>
 
        <li><div class="stepName"> Dimensions</div>
@@ -380,6 +388,10 @@
               <strong>Depth(cm)</strong><br/> <input type="number" value="0.2"/>
             </li>
           </ul>
+          <ul class="extraNotes"></ul>
+          <p class="notes">Add Notes</p>
+          <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+          <div class="postNote btn btnBlue hidden">Post</div>          
         </li>
 
       <li id="assessUlcerPhoto"><div class="stepName">Photo</div>
@@ -388,13 +400,17 @@
           <p>Take a photo</p>
           <br/>
           <br/>
+          <ul class="extraNotes"></ul>
+          <p class="notes">Add Notes</p>
+          <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+          <div class="postNote btn btnBlue hidden">Post</div>          
         </li>
 
       <li><div class="stepName"> Final Notes</div>
           <div class="stepDesc"> Add any comments here.</div>
           <div class="stepProgress">5 of 5</div>
         <textarea style="height: 150px;"></textarea>
-    </ul>
+    </ul>    
     <br/>
     <br/>
   </div>
@@ -469,31 +485,35 @@
                 </div>
                 <div class="stepProgress">1 of 6</div>
                 <ul class="stepOptions">
-                  <li>
+                  <li id="sensoryOne" class="bradenOption">
                     <strong>1. Completely Limited</strong><br/> Unresponsive (does not moan, 
                     flinch, or grasp) to painful stimuli, due to diminished level of
                     consciousness or sedation OR limited ability to feel
                     pain over most of body
                   </li>
-                  <li class="selected">
+                  <li id="sensoryTwo" class="bradenOption">
                     <strong>2. Very Limited</strong><br /> Responds only to painful stimuli. Cannot communicate
                     discomfort except by moaning or restlessness OR has a sensory 
                     impairment which limits the ability to feel pain or discomfort over
                     &frac12; of the body
                   </li>
 
-                  <li>
+                  <li id="sensoryThree" class="bradenOption">
                     <strong>3. Slightly Limited</strong><br/> Responds to verbal commands, but cannot always 
                     communicate discomfort or the need to be turned OR has some sensory
                     impairment which limits ability to feel pain or discomfort in 1 or 2
                     externalities
                   </li>
 
-                  <li>
+                  <li id="sensoryFour" class="bradenOption">
                     <strong>4. No Impairment</strong><br/> Responds to verbal commands. Has no sensory deficit
                     which would limit ability to feel or voice pain or discomfort.
                   </li>
                 </ul>
+                <ul class="extraNotes"></ul>
+                <p class="notes">Add Notes</p>
+                <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+                <div class="postNote btn btnBlue hidden">Post</div>
               </li>
               <li><div class="stepName"> Moisture</div>
                 <div class="stepDesc"> 
@@ -501,26 +521,30 @@
                 </div>
                 <div class="stepProgress">2 of 6</div>
                 <ul class="stepOptions">
-                  <li>
+                  <li id="moistureOne" class="bradenOption">
                     <strong>1. Constantly Moist</strong><br/> Skin is kept moist almost constantly by 
                     perspiration, urine, etc. Dampness detected every time patient is
                     moved or turned.
                   </li>
-                  <li>
+                  <li id="moistureTwo" class="bradenOption">
                     <strong>2. Very Moist</strong><br/> Skin is often, but not always moist. Linen must be 
                     changed at least once a shift.
                   </li>
 
-                  <li class="selected">
+                  <li id="moistureThree" class="bradenOption">
                     <strong>3. Occasionally Moist</strong><br/> Skin is occasionally moist, requiring an extra
                     linen change approximately once a day.
                   </li>
 
-                  <li>
+                  <li id="moistureFour" class="bradenOption">
                     <strong>4. Rarely Moist</strong><br/> Skin is usually dry, linen only requires changing
                     at routine intervals.
                   </li>
                 </ul>
+                <ul class="extraNotes"></ul>
+                <p class="notes">Add Notes</p>
+                <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+                <div class="postNote btn btnBlue hidden">Post</div>                
               </li>
             <li><div class="stepName"> Activity</div>
                 <div class="stepDesc"> 
@@ -528,27 +552,31 @@
                 </div>
                 <div class="stepProgress">3 of 6</div>
                 <ul class="stepOptions">
-                  <li>
+                  <li id="activityOne" class="bradenOption">
                     <strong>1. Bedfast</strong><br/>
                     Confined to bed.
                   </li>
-                  <li class="selected">
+                  <li id="activityTwo" class="bradenOption">
                     <strong>2. Chairfast</strong><br/> Ability to walk severely limited or non-existent.
                     Cannot bear own weight and/or must be assisted into chair or 
                     wheelchair.
                   </li>
 
-                  <li>
+                  <li id="activityThree" class="bradenOption">
                     <strong>3. Walks Occasionally</strong><br/> Walks occasionally during day, but for very 
                     short distances, with or without assistance. Spends majority of each 
                     shift in bed or chair.
                   </li>
 
-                  <li>
+                  <li id="activityFour" class="bradenOption">
                     <strong>4. Walks Frequently</strong><br/> Walks outside room at least twice a day and 
                     inside room at least once every two hours during walking hours.
                   </li>
                 </ul>
+                <ul class="extraNotes"></ul>
+                <p class="notes">Add Notes</p>
+                <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+                <div class="postNote btn btnBlue hidden">Post</div>                
               </li>
               <li><div class="stepName"> Mobility</div>
                 <div class="stepDesc"> 
@@ -556,25 +584,30 @@
                 </div>
                 <div class="stepProgress">4 of 6</div>
                 <ul class="stepOptions">
-                  <li>
+                  <li id="mobilityOne" class="bradenOption">
                     <strong>1. Completely Immobile</strong><br/> Does not make even slight changes in body or
                     extremity position without assistance.
                   </li>
-                  <li >
+
+                  <li id="mobilityTwo" class="bradenOption">
                     <strong>2. Very Limited</strong><br/> Makes occasional slight changes in body or extremity
                     position but unable to make frequent or significant changes 
                     independently.
                   </li>
 
-                  <li class="selected">
+                  <li id="mobilityThree" class="bradenOption">
                     <strong> 3. Slightly Limited</strong><br/> Makes frequent though slight changes in body or
                     extremity position independently.
                   </li>
 
-                  <li>
+                  <li id="mobilityFour" class="bradenOption">
                     <strong>4. No Limitation</strong><br/> Makes major and frequent changes in position.
                   </li>
                 </ul>
+                <ul class="extraNotes"></ul>
+                <p class="notes">Add Notes</p>
+                <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+                <div class="postNote btn btnBlue hidden">Post</div>                
               </li>
               <li><div class="stepName"> Nutrition</div>
                 <div class="stepDesc"> 
@@ -582,14 +615,14 @@
                 </div>
                 <div class="stepProgress">5 of 6</div>
                 <ul class="stepOptions">
-                  <li>
+                  <li id="foodOne" class="bradenOption">
                     <strong>1. Very Poor</strong><br/> Never eats a complete meal. Rarely eats more than 
                     &frac13; of any food offered. Eats 2 servings or less or protein
                     (meat or dairy products) per day. Takes fluids poorly. Does not take
                     a liquid dietary supplement OR is NPO and/or maintained on clear
                     liquids or IV's for more than 5 days.
                   </li>
-                  <li>
+                  <li id="foodTwo" class="bradenOption">
                     <strong>2. Probably Inadequate</strong><br/> Rarely eats a complete meal and generally
                     eats only about &frac12; of any food offered. Protein intake includes
                     only 3 servings of meat or dairy products per day. Occasionally will
@@ -597,7 +630,7 @@
                     liquid or tube feeding.
                   </li>
 
-                  <li>
+                  <li id="foodThree" class="bradenOption">
                     <strong>3. Adequate</strong><br/> Eats over half of most meals. Eats a total of 4 servings
                     of protein (meet or dairy products) per day. Occasionally will refuse
                     a meal, but will usually take a supplement when offered OR is on a
@@ -605,40 +638,48 @@
                     needs.
                   </li>
 
-                  <li class="selected">
+                  <li id="foodFour" class="bradenOption">
                     <strong>4. Excellent</strong><br/> Eats most of every meal. Never refuses a meal. Usually
                     eats a total of 4 or more servings of meat and dairy products.
                     Occasionally eats between meals. Does not require supplementation.
                   </li>
                 </ul>
+                <ul class="extraNotes"></ul>
+                <p class="notes">Add Notes</p>
+                <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+                <div class="postNote btn btnBlue hidden">Post</div>                
               </li>
               <li><div class="stepName">Friction & Shear</div>
                 <div class="stepDesc"> </div>
                 <div class="stepProgress">6 of 6</div>
                 <ul class="stepOptions">
-                  <li>
+                  <li id="frictionOne" class="bradenOption">
                     <strong> 1. Problem</strong><br/> Requires moderate to maximum assistance in moving. 
                     Complete lifting without sliding against sheets is impossible.
                     Frequently slides down in bed or chair, requiring frequent
                     repositioning with maximum assistance. Spasticity, contractures or
                     agitation leads to almost constant friction.
                   </li>
-                  <li class="selected">
+                  <li id="frictionTwo" class="bradenOption">
                     <strong>2. Potential Problem</strong><br/> Moves feebly or requires minimum assistance.
                     During a move skin pobably slides to some extent against sheets, 
                     chair, restraints or other devices. Maintains relatively good position
                     in chair or bed most of the time but occasionally slides down.
                   </li>
 
-                  <li>
+                  <li id="frictionThree" class="bradenOption">
                     <strong>3. No Apparent Problem</strong><br/> Moves in bed and in chair independently and
                     has sufficient muscle strength to lift up.
                   </li>
                 </ul>
+                <ul class="extraNotes"></ul>
+                <p class="notes">Add Notes</p>
+                <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
+                <div class="postNote btn btnBlue hidden">Post</div>                
               </li>
           </ul>
           <footer class="bradenConclusion">
-            Braden Score of <strong>6 - Very High Risk</strong>
+            Braden Score of <strong><span id="finalScore">NULL</span></strong>
           </footer>
 
           <br/>
