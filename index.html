@@ -62,9 +62,11 @@
         <div id="cancelNoteBtn" class="postNote btn btnLeft hidden">Cancel</div>
         <!--<div class="btn">Capture</div>-->
         <!--div id="captureBtn" class="btn btnBlue">Capture</div>-->
-        <div id="addUlcerBtn" class="btn btnBlue">Add Ulcer</div>
-        <div id="testsBtn" class="btn">Tests</div>
+        <div id="addUlcerBtn" class="btn">Add Ulcer</div>
+        <!--
+        <div id="testRiskBtn" class="btn">Assess Risk</div>
         <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
+      -->
       </nav>
 
       <!-- Patient Information -->
@@ -77,17 +79,25 @@
         </div>
         <h1> Stephanie Clay</h1>
         <ul>
+          <li>Patient ID #4A7FE, Room 213 A</li>
+          <li>Admitted - Monday March 4, 2013</li>
+        </ul>
+        <div id="testBtn">Assess Risk</div>
+        <!--
+        <ul>
           <li>Room 213 A</li>
           <li>Born - August 4, 1983</li>
           <li>Admitted - Monday March 4, 2013</li>
           <li id="bradenBtn">Braden Risk 6 - High</li>
         </ul>
+      -->
       </header>
       <div class="tabdivider">
         <nav class="tabs">
           <!--<div class="btn">New Ulcer</div> -->
           <ul class="tabs">
             <li id="ulcerTab" class="selected">Ulcers</li>
+            <li id="testTab">Tests</li>
             <li id="reminderTab">Tasks</li>
             <li id="noteTab">Notes</li>
           </ul>
@@ -135,9 +145,22 @@
               </li>
           </ul>
         </div>
+        <div id="testList" class="tabcontent hidden">
+          <!-- List of tests -->
+          <ul class="tests">
+            <li>Braden Risk Test
+                <div class="score">6 - High Risk</div>
+            </li>
+            <li>Braden Q Test
+                <div class="score">6 - High Risk</div>
+            </li>
+
+          </ul>
+        </div>
         <div id="reminderList" class="tabcontent hidden">
           <!-- List of reminders -->
           <ul class="reminders">
+            <!--
             <li class="newReminder">
               <input id="reminderText" type="text" />
               <div class="time"><select name="tag">
@@ -147,22 +170,23 @@
                 <option value="Today">Today</option>
                 <option value="Tomorrow">Tomorrow</option>
               </select></div></li>
-            <li>
-              <div class="checkbox"><img src="img/check.png"/></div>
-              Rotate Patient
-              <div class="time">In 2 Hours</div></li>
-            <li class="">
-              <div class="checkbox"><img src="img/check.png"/></div>
-              Educate Patient about Ulcers
-              <div class="time">Today</div></li>
+            -->
             <li class="">
               <div class="checkbox"><img src="img/check.png"/></div>
               Complete Braden Risk Assessment
               <div class="time">Today</div></li>
+            <li class="">
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Educate Patient about Ulcers
+              <div class="time">Tomorrow</div></li>
             <li>
               <div class="checkbox"><img src="img/check.png"/></div>
-              Re-examine Ulcer 2 (Right Thigh)
-              <div class="time">Tomorrow</div></li>
+              Contact Wound Care Team
+              <div class="time">Today</div></li>
+            <li>
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Re-Assess Ulcers
+              <div class="time">Today</div></li>
           </ul>
         </div>
         <div id="noteList" class="tabcontent hidden">
