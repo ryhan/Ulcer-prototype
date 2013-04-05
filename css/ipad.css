@@ -800,6 +800,72 @@ History
   background-color: darkgrey;
 }
 
+#exportImg {
+  width: 30px;
+  height: 20px;
+  float: right;
+  margin-top: 12px;
+  margin-right: 10px;
+  border-radius: 4px;
+  
+}
+
+#shadow{
+  z-index:0; /*make this value negative if doesnt work*/
+  box-shadow:  0 -130px 180px 150px rgba(255,255,0, 0.6);
+  width:0px;
+  height:0px;
+  float: right;
+}
+
+#imageList li img{
+  height: 80px;
+  display: block;
+}
+
+#historyWrapper {
+  height: 80px;
+  overflow-x:scroll;
+  overflow-y: hidden;
+  margin-left: 50px;
+}
+
+#scroller {
+  height:100%;
+  float:left;
+  padding:0;
+}
+
+#scroller ul {
+  white-space:nowrap; 
+  list-style:none;
+  display:block;
+  float:left;
+  width: 100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  text-align:left;
+}
+
+#scroller li {
+  background-color: grey;
+  display:inline-block;
+}
+
+#imageList li {
+  background-color: rgba(0,0,0,0.5);
+}
+
+#imageList li:not(:first-child) img {
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); 
+}
+
+
 
 /*****************************************************************************
 Modal
@@ -972,3 +1038,4 @@ ul.extraNotes li div.time {
 .postNote {
   text-align: center;
 }
+
