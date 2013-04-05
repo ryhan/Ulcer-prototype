@@ -295,21 +295,17 @@ function assessUlcerPane(){
 
 function historyUlcer() {
   var $historyUlcerBtn = $('.historyUlcerBtn');
-  var $cancelHistoryUlcerPaneBtn = $('#cancelHistoryUlcerPaneBtn');
-  var $saveHistoryUlcerPaneBtn = $('#saveHistoryUlcerPaneBtn');
+  var $backHistoryUlcerPaneBtn = $('#backHistoryUlcerPaneBtn');
+  var $exportHistoryUlcerPaneBtn = $('#exportHistoryUlcerPaneBtn');
 
   var $historyUlcerPane = $('#historyUlcerPane');
   $historyUlcerBtn.bind('touchstart', function(){
     $historyUlcerPane.removeClass('hidden');
   }); 
-  $cancelHistoryUlcerPaneBtn.bind('touchstart', function(){
+  $backHistoryUlcerPaneBtn.bind('touchstart', function(){
     console.log('hi');
     $historyUlcerPane.addClass('hidden');
   }); 
-  $saveHistoryUlcerPaneBtn.bind('touchstart', function(){
-    console.log('hi');
-    $historyUlcerPane.addClass('hidden');
-  })
 
 }
 
@@ -447,5 +443,11 @@ function notes() {
   }
 
   //console.log($postNewNoteBtn);
+
+}
+
+function historySlider() {
+  myScroll = new iScroll('historyWrapper', {snap: 'li', hScrollbar: true, vScroll: false});
+  myScroll.refresh();
 
 }
