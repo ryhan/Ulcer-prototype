@@ -414,7 +414,7 @@ function newbradenPane(){
 };
 
 function notes() {
-  $('.notes').on('click', function(e) {
+  $('.addNotes').on('click', function(e) {
     $postNewNoteBtn = $(this).siblings('.postNote');
     $newNoteForm = $(this).siblings('.extraNotes');
     $newNoteInput = $(this).siblings('textarea');    
