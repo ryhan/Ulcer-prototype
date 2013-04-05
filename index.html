@@ -422,13 +422,13 @@
 <!-- Begin Ulcer History Pane -->
 <div id="historyUlcerPane" class="view historyUlcer hidden">
   <nav>
-    <div id="cancelHistoryUlcerPaneBtn" class="btn btnLeft">Cancel</div>
-    <div id="saveHistoryUlcerPaneBtn" class="btn btnBlue">Save</div>
+    <div id="backHistoryUlcerPaneBtn" class="btn btnLeft">Back</div>
+    <div id="exportHistoryUlcerPaneBtn" class="btn btnRight btnBlue">Export</div>
     <h1> Ulcer History </h1>
   </nav>
   <div class="viewContent" id="historyUlcerWrapper">
     <img id="graphImg" src="img/graph.png"/>    
-    <table id="ulcerData">
+    <!--<table id="ulcerData">
       <th>Date</th>
       <th>Assessment Score</th>
       <th>Size</th>                
@@ -463,7 +463,22 @@
         <td>2" x 1"</td>                              
         <td>yes</td>            
       </tr>              
-    </table>
+    </table>-->
+    <div id="historyWrapper">
+      <div id="scroller">
+        <ul id="imageList">
+          <li><img src="img/ulcer1.png"></li>
+          <li><img src="img/ulcer2.png"></li>
+          <li><img src="img/ulcer3.png"></li>            
+          <li><img src="img/ulcer1.png"></li>
+          <li><img src="img/ulcer2.png"></li>
+          <li><img src="img/ulcer3.png"></li>           
+          <li><img src="img/ulcer1.png"></li>
+          <li><img src="img/ulcer2.png"></li>
+          <li><img src="img/ulcer3.png"></li>                           
+        </ul>
+      </div>  
+    </div>    
   </div>
 </div>
 <!-- END Assess -->
