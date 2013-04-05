@@ -447,7 +447,7 @@ function notes() {
 }
 
 function historySlider() {
-  myScroll = new iScroll('historyWrapper', {snap: 'li', hScrollbar: true, vScroll: false});
+  myScroll = new iScroll('historyWrapper', {snap: 'li', hScrollbar: false, vScroll: false, vScrollbar: false, hScroll: false});
   myScroll.refresh();
 
 }
