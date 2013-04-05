@@ -7,6 +7,7 @@ $(function() {
   newulcerPane();
   assessUlcerPane();
   newbradenPane();
+  allTestsPane();
   historyUlcer();  
   historySlider();
   notes();
@@ -313,6 +314,19 @@ function historyUlcer() {
 
 }
 
+function allTestsPane() {
+  var $testsBtn = $('#testsBtn');
+  var $cancelTests = $('#cancelTests');
+  
+  var $testsPane = $('#allTestsPane');
+
+  $testsBtn.bind('touchstart', function() {
+    $testsPane.removeClass('hidden');
+  });
+  $cancelTests.bind('touchstart', function() {
+    $testsPane.addClass('hidden');
+  });
+}
 
 function newbradenPane(){
 

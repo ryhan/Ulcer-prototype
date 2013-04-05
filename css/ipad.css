@@ -304,19 +304,20 @@ ul.tabs li{
   width: 150px;
   cursor: pointer;
 }
-ul.tabs li:first-child{
+
+ul.tabs li:first-child {
   border-left: none;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 
-ul.tabs li:last-child{
+ul.tabs li:last-child { 
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
 ul.tabs li.selected,
-ul.tabs li:active{
+ul.tabs li:active {
   background: -webkit-linear-gradient(top, #BEC1CA, #EEE);
   box-shadow: inset 0 2px 3px rgba(0,0,0,0.2);
 }
@@ -571,7 +572,7 @@ Add Ulcer View
   -webkit-transform: translate(0px,0px);
 }
 
-#addUlcerPane .viewContent, #bradenScalePane .viewContent{
+#addUlcerPane .viewContent, #bradenScalePane .viewContent, #allTestsPane .viewContent{
   background: -webkit-linear-gradient(top, #BBB, #EEE);
 }
 #addUlcerPane input[type='text']{
@@ -1005,7 +1006,7 @@ Notes
   bottom: 20px;
 }
 
-.hidden {
+textarea > .hidden {
   display: none;
 }
 
