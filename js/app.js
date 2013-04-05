@@ -8,7 +8,7 @@ $(function() {
   assessUlcerPane();
   newbradenPane();
   historyUlcer();  
-  //historySlider();
+  historySlider();
   notes();
 
 });
@@ -451,6 +451,9 @@ function notes() {
 }
 
 function historySlider() {
-  myScroll = new iScroll('historyWrapper', {snap: 'li', hScrollbar: false, vScroll: false, vScrollbar: false, hScroll: false});
-  myScroll.refresh();
+//  var height = $('#imageList li img').height();
+  //console.log(height);
+  //$('#historyWrapper').css('height', height);
+  var myScrollHistory = new iScroll('historyWrapper', { hScrollbar: false, vScrollbar: false, vScroll: false });
+  myScrollHistory.refresh();
 }
