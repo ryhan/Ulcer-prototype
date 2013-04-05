@@ -825,6 +825,7 @@ History
 
 #historyWrapper {
   height: 80px;
+  overflow: auto;
   overflow-y: hidden;
   margin-left: 50px;
 }
@@ -995,7 +996,7 @@ ul.tabs li.selected{
 Notes
 *****************************************************************************/
 
-.addNotes {
+.addnotes {
   position: absolute;
   left: 40px;
   font-size: 16px;
