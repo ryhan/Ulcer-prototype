@@ -22,11 +22,13 @@ function patientTabs(){
   // Tap Targets
   var $tabs = $('.main .tabs li');
   var $ulcerTab = $('#ulcerTab');
+  var $testTab = $('#testTab');
   var $reminderTab = $('#reminderTab');
   var $noteTab = $('#noteTab');
 
   var $lists = $('.main .tabcontent');
   var $ulcerList = $('#ulcerList');
+  var $testList = $('#testList');
   var $reminderList = $('#reminderList');
   var $noteList = $('#noteList');
 
@@ -35,6 +37,13 @@ function patientTabs(){
     $ulcerTab.addClass('selected');
     $lists.addClass('hidden');
     $ulcerList.removeClass('hidden');
+  }
+
+  var showTests = function(){
+    $tabs.removeClass('selected');
+    $testTab.addClass('selected');
+    $lists.addClass('hidden');
+    $testList.removeClass('hidden');
   }
 
   var showReminders = function(){
@@ -52,6 +61,7 @@ function patientTabs(){
   }
 
   $ulcerTab.bind('touchstart', showUlcers);
+  $testTab.bind('touchstart', showTests);
   $reminderTab.bind('touchstart', showReminders);
   $noteTab.bind('touchstart', showNotes);
 
