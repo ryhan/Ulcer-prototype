@@ -298,6 +298,7 @@ nav.tabs{
   top: 0;
   z-index: 2;
   height: -webkit-calc(100% - 325px - 70px);
+  height: -webkit-calc(100% - 250px);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   -webkit-transition: top 0.5s;
@@ -305,6 +306,7 @@ nav.tabs{
 
 .tabsection.full{
   top: -305px;
+  top: -235px;
   height:  -webkit-calc(100%);
 }
 
