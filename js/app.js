@@ -8,8 +8,12 @@ $(function() {
   assessUlcerPane();
   newbradenPane();
   historyUlcer();  
+  //historySlider();
   notes();
+
 });
+
+var iScroll;
 
 // Manages Ulcer / Reminders / Notes Tabs
 function patientTabs(){
@@ -237,7 +241,7 @@ function newulcerPane(){
     $addUlcerPane.addClass('hidden');
   })
 
-  myScroll = new iScroll('addUlcerWrapper');
+  var myScroll = new iScroll('addUlcerWrapper');
 
   function protectInputs(){
     $('#addUlcerPane input').on('touchstart', function(e){
@@ -410,7 +414,7 @@ function newbradenPane(){
 };
 
 function notes() {
-  $('.notes').on('click', function(e) {
+  $('.addNotes').on('click', function(e) {
     $postNewNoteBtn = $(this).siblings('.postNote');
     $newNoteForm = $(this).siblings('.extraNotes');
     $newNoteInput = $(this).siblings('textarea');    
@@ -440,14 +444,13 @@ function notes() {
     newli.append(date);
     newli.append(message);
     $newNoteForm.append(newli);
-  }
+  };
 
   //console.log($postNewNoteBtn);
 
 }
 
 function historySlider() {
-  myScroll = new iScroll('historyWrapper', {snap: 'li', hScrollbar: true, vScroll: false});
+  myScroll = new iScroll('historyWrapper', {snap: 'li', hScrollbar: false, vScroll: false, vScrollbar: false, hScroll: false});
   myScroll.refresh();
-
 }

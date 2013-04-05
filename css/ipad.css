@@ -825,7 +825,6 @@ History
 
 #historyWrapper {
   height: 80px;
-  overflow: auto;
   overflow-y: hidden;
   margin-left: 50px;
 }
