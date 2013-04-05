@@ -997,7 +997,7 @@ ul.tabs li.selected{
 Notes
 *****************************************************************************/
 
-.addnotes {
+.addNotes {
   position: absolute;
   left: 40px;
   font-size: 16px;
@@ -1006,7 +1006,7 @@ Notes
   bottom: 20px;
 }
 
-textarea > .hidden {
+textarea.hidden {
   display: none;
 }
 
