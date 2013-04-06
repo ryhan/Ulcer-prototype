@@ -670,13 +670,15 @@ Add Ulcer View
   opacity: 1;
   
   -webkit-transition: all 1s ease-in-out, z-index 0.5s;
+  -webkit-transition: all 0.8s ease-in-out, opacity 0.4s linear;
   -webkit-transform: translate(0px,0px);
 }
 .view.hidden{
   opacity: 0;
   z-index: -1;
-  -webkit-transform: translate(0px,4000px);
+  /*-webkit-transform: translate(0px,4000px);*/
   /*-webkit-transform: translate(500px,0);*/
+  -webkit-transform: translate(4000px,0);
 }
 .view .viewContent{
   position: absolute;
