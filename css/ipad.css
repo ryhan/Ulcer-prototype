@@ -923,9 +923,33 @@ td.bdnAns{
 /*****************************************************************************
 History
 *****************************************************************************/
+
+#historyUlcerWrapper{
+  background-color: #EEE;
+padding-top: 50px;
+
+}
+#historyUlcerWrapper h1{
+  padding: 0 60px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 10px;
+}
+#historyUlcerWrapper h1 span{
+  float: right;
+  font-weight: normal;
+}
 #graphImg {
   display: block;
   margin: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 650px;
+  margin-bottom: 20px;
 }
 
 #ulcerData {
