@@ -80,6 +80,11 @@ function reminders(){
     $(e.target.parentNode.parentNode).toggleClass('complete');
   });
 
+
+  /*
+  var myScroll = new iScroll('reminders');
+  */
+
   $reminderInput = $('#reminderText');
   $tabsection = $('.main .tabsection');
 
