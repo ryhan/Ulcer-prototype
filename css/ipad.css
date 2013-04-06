@@ -545,12 +545,12 @@ ul.reminders li.divider{
   background-color: #A9ADB9;
   background: -webkit-linear-gradient(top, #EFF0F3, #A9ADB9);
   background: -webkit-linear-gradient(top, #FFF, #F0F0F0, #CCC);
-  border-bottom: 1px solid #7A8091;
+  border-bottom: 1px solid #AAA;
   box-shadow: 
     inset 0 1px 0 #FFF,
     0 1px 2px rgba(0,0,0,0.1),
-    0 -1px 0 #7A8091;
-  color: #555;
+    0 -1px 0 #AAA;
+  color: #777;
   text-shadow: 0 1px #EEE;
 }
 ul.reminders .time{
