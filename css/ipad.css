@@ -308,6 +308,7 @@ nav.tabs{
 .tabsection.full{
   top: -305px;
   top: -235px;
+  top: -225px;
   height:  -webkit-calc(100%);
 }
 
