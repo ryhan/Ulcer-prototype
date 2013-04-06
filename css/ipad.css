@@ -299,7 +299,7 @@ nav.tabs{
   z-index: 2;
   height: -webkit-calc(100% - 325px - 70px);
   height: -webkit-calc(100% - 395px);
-  height: -webkit-calc(100%);
+  height: -webkit-calc(100% - 245px);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   -webkit-transition: top 0.5s;
@@ -526,6 +526,7 @@ ul.reminders{
   list-style-type: none;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 ul.reminders li{
@@ -536,6 +537,21 @@ ul.reminders li{
   border-bottom: 1px solid #CCC;
   font-size: 20px;
   color: #444;
+}
+ul.reminders li.divider{
+  padding: 5px 60px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #A9ADB9;
+  background: -webkit-linear-gradient(top, #EFF0F3, #A9ADB9);
+  background: -webkit-linear-gradient(top, #FFF, #F0F0F0, #CCC);
+  border-bottom: 1px solid #7A8091;
+  box-shadow: 
+    inset 0 1px 0 #FFF,
+    0 1px 2px rgba(0,0,0,0.1),
+    0 -1px 0 #7A8091;
+  color: #555;
+  text-shadow: 0 1px #EEE;
 }
 ul.reminders .time{
   position: absolute;
@@ -554,11 +570,18 @@ ul.reminders .checkbox{
   position: absolute;
   top: 28px;
   left: 60px;
+  background: -webkit-linear-gradient(top,#FFF, #DDD, #AAA);
+  background-color: #CCC;
+  border: 1px solid #888;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+ul.reminders li.urgent .checkbox{
   background: -webkit-linear-gradient(top,#F7E064, #F7CA19, #EEB70D);
   background-color: #E2B543;
   border: 1px solid #9A692E;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
 ul.reminders .checkbox img{
@@ -573,6 +596,7 @@ ul.reminders .checkbox img{
 ul.reminders li.complete{
   background-color: #EEE;
   color: #AAA;
+  text-decoration:line-through;
 }
 ul.reminders li.complete .checkbox{
   border: 1px solid #888;
