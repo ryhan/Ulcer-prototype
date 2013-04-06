@@ -544,7 +544,7 @@ ul.reminders li.divider{
   font-weight: bold;
   background-color: #A9ADB9;
   background: -webkit-linear-gradient(top, #EFF0F3, #A9ADB9);
-  background: -webkit-linear-gradient(top, #FFF, #F0F0F0, #CCC);
+  background: -webkit-linear-gradient(top, #FFF, #F0F0F0, #DDD);
   border-bottom: 1px solid #AAA;
   box-shadow: 
     inset 0 1px 0 #FFF,
