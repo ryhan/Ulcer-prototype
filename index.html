@@ -65,8 +65,9 @@
         <div id="addUlcerBtn" class="btn">Add Ulcer</div>
         <!--
         <div id="testRiskBtn" class="btn">Assess Risk</div>
+        -->
         <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
-      -->
+      
       </nav>
 
       <!-- Patient Information -->
@@ -163,7 +164,7 @@
         <div id="reminderList" class="tabcontent hidden">
           <!-- List of reminders -->
           <ul class="reminders">
-            <!--
+  
             <li class="newReminder">
               <input id="reminderText" type="text" />
               <div class="time"><select name="tag">
@@ -173,23 +174,33 @@
                 <option value="Today">Today</option>
                 <option value="Tomorrow">Tomorrow</option>
               </select></div></li>
-            -->
-            <li class="">
+         
+            <li class="divider">
+              New Patient Checklist
+            </li>
+            <li class="urgent">
               <div class="checkbox"><img src="img/check.png"/></div>
-              Complete Braden Risk Assessment
+              Complete Braden Risk Test
+              <div class="time">Today</div></li>
+            <li class="urgent">
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Check for existing wounds
               <div class="time">Today</div></li>
             <li class="">
               <div class="checkbox"><img src="img/check.png"/></div>
               Educate Patient about Ulcers
               <div class="time">Tomorrow</div></li>
-            <li>
+            <li class="divider">
+              Treatment Checklist
+            </li>
+            <li class="urgent">
               <div class="checkbox"><img src="img/check.png"/></div>
               Contact Wound Care Team
               <div class="time">Today</div></li>
             <li>
               <div class="checkbox"><img src="img/check.png"/></div>
               Re-Assess Ulcers
-              <div class="time">Today</div></li>
+              <div class="time">Tomorrow</div></li>
           </ul>
         </div>
         <div id="noteList" class="tabcontent hidden">
