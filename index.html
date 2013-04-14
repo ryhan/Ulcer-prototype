@@ -66,7 +66,7 @@
         <!--
         <div id="testRiskBtn" class="btn">Assess Risk</div>
         -->
-        <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
+        <!--<div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>-->
       
       </nav>
 
@@ -166,27 +166,36 @@
           <ul class="reminders">
   
             <li class="newReminder">
-              <input id="reminderText" type="text" />
+              <div class="titleReminders">New Reminder</div>
+              <textarea id="reminderText" type="text" placeholder="Add a reminder here."></textarea>
               <div class="time"><select name="tag">
                 <option value="1 Hour">1 Hour</option>
                 <option value="2 Hours">2 Hours</option>
                 <option value="6 Hours">6 Hours</option>
                 <option value="Today">Today</option>
-                <option value="Tomorrow">Tomorrow</option>
-              </select></div></li>
+                <option value="Tomorrow">Tomorrow</option>              
+              </select></div>
+              <div class="titleReminders">Tags</div>              
+              <textarea id="tagReminderText" placeholder="Add a tag here."></textarea>
+              <div id="reminderNoteBtn" class="btn btnBlue hidden">Post</div>
+
+            </li>
          
             <li class="divider">
               New Patient Checklist
             </li>
             <li class="urgent">
+              <div class="tags">Assess<br>Risk</div>              
               <div class="checkbox"><img src="img/check.png"/></div>
               Complete Braden Risk Test
               <div class="time">Today</div></li>
             <li class="urgent">
+              <div class="tags">Wounds</div>                            
               <div class="checkbox"><img src="img/check.png"/></div>
               Check for existing wounds
               <div class="time">Today</div></li>
             <li class="">
+              <div class="tags">Ulcers</div>              
               <div class="checkbox"><img src="img/check.png"/></div>
               Educate Patient about Ulcers
               <div class="time">Tomorrow</div></li>
@@ -194,10 +203,12 @@
               Treatment Checklist
             </li>
             <li class="urgent">
+              <div class="tags">Ulcer 1<br>Risk</div>
               <div class="checkbox"><img src="img/check.png"/></div>
               Contact Wound Care Team
               <div class="time">Today</div></li>
             <li>
+              <div class="tags">Ulcer 1<br>Ulcer 2<br>Ulcer 3</div>              
               <div class="checkbox"><img src="img/check.png"/></div>
               Re-Assess Ulcers
               <div class="time">Tomorrow</div></li>
@@ -208,16 +219,19 @@
           <ul class="notes">
             <!-- New Note interface -->
             <li class="newNote">
-              <div class="tags"><select name="tag">
+              <!--<div class="tags"><select name="tag">
                 <option value="no tag">No Tag</option>
                 <option value="ulcer 1">Ulcer 1</option>
                 <option value="ulcer 2">Ulcer 2</option>
                 <option value="ulcer 3">Ulcer 3</option>
-              </select></div>
+              </select></div>-->
               <div class="time">New Note</div>
               <!--<div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>-->
               <!--<input type="text" id="noteText"/>-->
               <textarea id="noteText" placeholder="Leave a note here."></textarea>
+              <div class="time">Tags</div>
+              <textarea id="tagText" placeholder="Add a tag here."></textarea>
+              <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
               </li>
             <li>
               <div class="tags">Ulcer 2<br/> Ulcer 3</div>
@@ -385,7 +399,7 @@
           <ul class="extraNotes"></ul>
           <p class="addNotes">Add Notes</p>
           <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-          <div class="postNote btn btnBlue hidden">Post</div>          
+          <div class="extraNote postNote btn btnBlue hidden">Post</div>          
         </li>
         <li><div class="stepName"> Stage</div>
           <div class="stepProgress">2 of 5</div>
@@ -408,7 +422,7 @@
           <ul class="extraNotes"></ul>
           <p class="addNotes">Add Notes</p>
           <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-          <div class="postNote btn btnBlue hidden">Post</div>          
+          <div class="extraNote postNote btn btnBlue hidden">Post</div>          
         </li>
 
        <li><div class="stepName"> Dimensions</div>
@@ -429,7 +443,7 @@
           <ul class="extraNotes"></ul>
           <p class="addNotes">Add Notes</p>
           <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-          <div class="postNote btn btnBlue hidden">Post</div>          
+          <div class="extraNote postNote btn btnBlue hidden">Post</div>          
         </li>
 
       <li id="assessUlcerPhoto"><div class="stepName">Photo</div>
@@ -441,7 +455,7 @@
           <ul class="extraNotes"></ul>
           <p class="addNotes">Add Notes</p>
           <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-          <div class="postNote btn btnBlue hidden">Post</div>          
+          <div class="extraNote postNote btn btnBlue hidden">Post</div>          
         </li>
 
       <li><div class="stepName"> Final Notes</div>
@@ -581,7 +595,7 @@
                 <ul class="extraNotes"></ul>
                 <p class="addNotes">Add Notes</p>
                 <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-                <div class="postNote btn btnBlue hidden">Post</div>
+                <div class="extraNote postNote btn btnBlue hidden">Post</div>
               </li>
               <li><div class="stepName"> Moisture</div>
                 <div class="stepDesc"> 
@@ -612,7 +626,7 @@
                 <ul class="extraNotes"></ul>
                 <p class="addNotes">Add Notes</p>
                 <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-                <div class="postNote btn btnBlue hidden">Post</div>                
+                <div class="extraNote postNote btn btnBlue hidden">Post</div>                
               </li>
             <li><div class="stepName"> Activity</div>
                 <div class="stepDesc"> 
@@ -644,7 +658,7 @@
                 <ul class="extraNotes"></ul>
                 <p class="addNotes">Add Notes</p>
                 <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-                <div class="postNote btn btnBlue hidden">Post</div>                
+                <div class="extraNote postNote btn btnBlue hidden">Post</div>                
               </li>
               <li><div class="stepName"> Mobility</div>
                 <div class="stepDesc"> 
@@ -675,7 +689,7 @@
                 <ul class="extraNotes"></ul>
                 <p class="addNotes">Add Notes</p>
                 <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-                <div class="postNote btn btnBlue hidden">Post</div>                
+                <div class="extraNote postNote btn btnBlue hidden">Post</div>                
               </li>
               <li><div class="stepName"> Nutrition</div>
                 <div class="stepDesc"> 
@@ -715,7 +729,7 @@
                 <ul class="extraNotes"></ul>
                 <p class="addNotes">Add Notes</p>
                 <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-                <div class="postNote btn btnBlue hidden">Post</div>                
+                <div class="extraNote postNote btn btnBlue hidden">Post</div>                
               </li>
               <li><div class="stepName">Friction & Shear</div>
                 <div class="stepDesc"> </div>
@@ -743,7 +757,7 @@
                 <ul class="extraNotes"></ul>
                 <p class="addNotes">Add Notes</p>
                 <textarea class="newNote hidden" placeholder="Leave a note here."></textarea>
-                <div class="postNote btn btnBlue hidden">Post</div>                
+                <div class="extraNote postNote btn btnBlue hidden">Post</div>                
               </li>
           </ul>
           <footer class="bradenConclusion">
