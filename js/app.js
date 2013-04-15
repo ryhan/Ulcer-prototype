@@ -86,20 +86,23 @@ function reminders(){
   */
 
   $reminderInput = $('#reminderText');
+  $tagReminderInput = $('#tagReminderText');
+
   $tabsection = $('.main .tabsection');
 
   $reminderForm = $('#reminderList li.newReminder');
 
   $navBtns = $('.main #mainNav .btn');
-  $postNoteBtn = $('#postNoteBtn');
+  $reminderNoteBtn = $('#reminderNoteBtn');
+  $postNoteBtn = $('#postNoteBtn');  
   $cancelNoteBtn = $('#cancelNoteBtn');
 
   $reminderInput.on('touchstart', function(){
     $('.tabsection').addClass('full');
 
     $navBtns.hide();
-    $postNoteBtn.removeClass('hidden');
-    $postNoteBtn.show();
+    $reminderNoteBtn.removeClass('hidden');
+    $reminderNoteBtn.show();
     $cancelNoteBtn.removeClass('hidden');
     $cancelNoteBtn.show();
 
@@ -111,39 +114,45 @@ function reminders(){
     $('.tabsection').removeClass('full');
 
     $navBtns.show();
-    $postNoteBtn.addClass('hidden');
-    $postNoteBtn.hide();
+    $reminderNoteBtn.addClass('hidden');
+    $postNoteBtn.addClass('hidden');    
+    //$reminderNoteBtn.hide();
     $cancelNoteBtn.addClass('hidden');
     $cancelNoteBtn.hide();
   });
 
-  $postNoteBtn.on('touchstart', function(){
+  $reminderNoteBtn.on('touchstart', function(){
     $('.tabsection').removeClass('full');
+
+    var tag = $tagReminderInput.val().split(',').join('<br>');
 
     message = $reminderInput.val();
     if (message.length > 0){
-      postReminder(message, 'Today');
+      postReminder(message, tag, 'Today');
     }
 
-    $reminderInput.val(' ')
+    $reminderInput.val(' ');
+    $tagReminderInput.val(' ');
 
     $navBtns.show();
-    $postNoteBtn.addClass('hidden');
-    $postNoteBtn.hide();
+    $reminderNoteBtn.addClass('hidden');
+    //$reminderNoteBtn.hide();
     $cancelNoteBtn.addClass('hidden');
     $cancelNoteBtn.hide();
 
   })
 
-  var postReminder = function(message, time){
+  var postReminder = function(message, tag, time){
     var newli = $('<li />');
 
     var checkbox = $('<div class="checkbox" />').html('<img src="img/check.png"/>')
+    var tags = $('<div class="tags" />').html(tag);
 
     var date = $('<div class="time" />').text(time);
 
     newli.append(checkbox);
     newli.append(message);
+    newli.append(tags);    
     newli.append(date);
 
     $reminderForm.after(newli);
@@ -157,6 +166,7 @@ function reminders(){
 function note(){
 
   $noteInput = $('#noteText');
+  $tagInput = $('#tagText');  
   $postNoteBtn = $('#postNoteBtn');
   $cancelNoteBtn = $('#cancelNoteBtn');
   $noteForm = $('#noteList li.newNote');
@@ -167,8 +177,8 @@ function note(){
   $tabsection = $('.main .tabsection');
 
   var postNote = function(message, tag, date){
-
-    var tags = $('<div class="tags" />').text(tag);
+    $('.tabsection').removeClass('full');
+    var tags = $('<div class="tags" />').html(tag);
     var date = $('<div class="time" />').text(date);
     var message = $('<p />').text(message);
 
@@ -182,7 +192,8 @@ function note(){
 
   $postNoteBtn.bind('touchstart', function(){
     var message = $noteInput.val();
-    var tags = "Ulcer 3";
+    var tags = $tagInput.val().split(',').join('<br>');
+    //var tags = "Ulcer 3";
     var time = "Tuesday March 19, 2013 at 10:45am";
 
     if ($noteInput.val().length > 0){
@@ -191,6 +202,7 @@ function note(){
 
     $postNoteBtn.addClass('hidden');
     $noteInput.val('');
+    $tagInput.val('');
 
     $noteInput.blur();
   });
@@ -214,15 +226,18 @@ function note(){
     setTimeout(function(){$noteInput.focus();}, 500);
   });
 
-  $noteInput.blur(function(){
-    $('.tabsection').removeClass('full');
-    //$captureBtn.addClass('btnBlue');
+  $tagInput.on('touchstart', function(){
+    $('.tabsection').addClass('full');
 
-    $navBtns.show();
-    $postNoteBtn.addClass('hidden');
-    $postNoteBtn.hide();
-    $cancelNoteBtn.addClass('hidden');
-    $cancelNoteBtn.hide();
+    $navBtns.hide();
+    $postNoteBtn.removeClass('hidden');
+    $postNoteBtn.show();
+    $cancelNoteBtn.removeClass('hidden');
+    $cancelNoteBtn.show();
+
+    //$captureBtn.removeClass('btnBlue');
+    window.scrollTo(0,0);
+    setTimeout(function(){$tagInput.focus();}, 500);
   });
 
   // Show the 'post' button only when there's content.
