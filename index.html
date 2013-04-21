@@ -100,7 +100,7 @@
             <li id="ulcerTab" class="selected">Ulcers</li>
             <li id="testTab">Tests</li>
             <li id="reminderTab">Tasks</li>
-            <li id="noteTab">Notes</li>
+            <li id="noteTab">Log</li>
           </ul>
         </nav>
       </div>
@@ -166,8 +166,6 @@
           <ul class="reminders">
   
             <li class="newReminder">
-              <div class="titleReminders">New Reminder</div>
-              <textarea id="reminderText" type="text" placeholder="Add a reminder here."></textarea>
               <div class="time"><select name="tag">
                 <option value="1 Hour">1 Hour</option>
                 <option value="2 Hours">2 Hours</option>
@@ -175,6 +173,8 @@
                 <option value="Today">Today</option>
                 <option value="Tomorrow">Tomorrow</option>              
               </select></div>
+              <div class="titleReminders">New Reminder</div>
+              <textarea id="reminderText" type="text" placeholder="Add a reminder here."></textarea>
               <div class="titleReminders">Tags</div>              
               <textarea id="tagReminderText" placeholder="Add a tag here."></textarea>
               <div id="reminderNoteBtn" class="btn btnBlue hidden">Post</div>
@@ -240,6 +240,10 @@
                   on the patient's upper right thigh and lower back.
               </p>
               </li>
+             <li class="flag">
+              <p> Wound 1 was Assessed by R. Oldak on March 6 at 4pm.
+              </p>
+              </li>
               
             <li>
               <div class="time">Wednesday March 6, 2013 at 4pm</div>
@@ -254,6 +258,10 @@
               <div class="tags">Risk</div>
               <p> The patient was admitted and determined to be at a
                   high risk for pressure ulcers through a Braden Risk Assessment.
+              </p>
+              </li>
+              <li class="flag">
+              <p> Braden Risk Assessment Completed on March 4 at 10:37am.
               </p>
               </li>
 

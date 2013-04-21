@@ -540,6 +540,7 @@ ul.reminders li{
   padding: 30px;
   padding-left: 205px;
   padding-right: 260px;
+  padding-right: 100px;
   border-bottom: 1px solid #CCC;
   font-size: 20px;
   color: #444;
@@ -574,7 +575,15 @@ ul.reminders .tags{
 }
 
 ul.reminders .newReminder {
-  padding-bottom: 50px;
+  /*padding-bottom: 50px;*/
+  max-height: 110px;
+  overflow: hidden;
+}
+
+.full ul.reminders .newReminder{
+  background-color: #EEE;
+  padding-bottom: 20px;
+  max-height: none;
 }
 
 ul.reminders li.divider{
@@ -593,12 +602,19 @@ ul.reminders li.divider{
   text-shadow: 0 1px #EEE;
 }
 ul.reminders .time{
+  /*
   position: absolute;
   top: 30px;
   right: 30px;
+  */
+
   width: 100px;
   font-size: 18px;
   font-weight: bold;
+}
+
+ul.reminders #reminderNoteBtn{
+  right: -30px;
 }
 
 ul.reminders .checkbox{
@@ -707,6 +723,17 @@ ul.notes .newNote{
   /*padding-bottom: 0;*/
 }
 
+ul.notes .newNote{
+  /*padding-bottom: 50px;*/
+  max-height: 103px;
+  overflow: hidden;
+}
+
+.full ul.notes .newNote{
+  padding-bottom: 20px;
+  max-height: none;
+}
+
 ul.notes .newNote textarea{
   position: relative;
   /*top: -30px;*/
@@ -724,11 +751,24 @@ ul.notes .newNote textarea:focus + .submitBtn{
 }
 
 #postNoteBtn {
-  right: 42%;
+  /*right: 42%;*/
   width: 120px;  
   text-align: center;
 }
 
+ul.notes li.flag{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #777;
+
+  background-color: #EEE;
+  background: -webkit-linear-gradient(top, #DDD, #EEE);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+ul.notes li.flag p{
+  font-size: 14px;
+
+}
 ul.notes li > div.assessUlcerNote {
   position: absolute;
   font-size: 14px;
@@ -1286,7 +1326,10 @@ ul.extraNotes li {
 ul.extraNotes li div.time {
   font-size: 12px;
   font-weight: bold;
-  color: #222;  
+  color: #222;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .postNote {
