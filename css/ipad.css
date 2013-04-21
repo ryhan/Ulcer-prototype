@@ -650,7 +650,7 @@ ul.reminders li.complete .checkbox img{
 }
 
 #reminderNoteBtn {
-  right: 35%;
+  margin-right: 175px;
   width: 120px;
   text-align: center;
 }
@@ -724,7 +724,7 @@ ul.notes .newNote textarea:focus + .submitBtn{
 }
 
 #postNoteBtn {
-  right: 45%;
+  right: 42%;
   width: 120px;  
   text-align: center;
 }
