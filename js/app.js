@@ -127,6 +127,14 @@ function reminders(){
     var tag = $tagReminderInput.val().split(',').join('<br>');
 
     message = $reminderInput.val();
+    $noteReminderForm = $('#noteList li.newNote');
+    var newli = $('<li class="assessNote"/>');
+
+    var appendNote = $('<div class="reminderUlcerNote" />').text("Set reminder: " + message);
+    var imageNote = $('<img src="img/reminderNote.png" alt="Reminder Note" />');
+    newli.append(imageNote);
+    newli.append(appendNote);
+    $noteReminderForm.after(newli);    
     if (message.length > 0){
       postReminder(message, tag, 'Today');
     }
@@ -292,7 +300,6 @@ function newulcerPane(){
 
 
 function assessUlcerPane(){
-
   var $assessUlcerBtn = $('.assessUlcerBtn');
   var $cancelAssessUlcerPaneBtn = $('#cancelAssessUlcerPaneBtn');
   var $saveAssessUlcerPaneBtn = $('#saveAssessUlcerPaneBtn');
@@ -300,6 +307,15 @@ function assessUlcerPane(){
   var $assessUlcerPane = $('#assessUlcerPane');
 
   $assessUlcerBtn.bind('touchstart', function(){
+    $noteAssessForm = $('#noteList li.newNote');
+    var newli = $('<li class="assessNote"/>');
+
+    var ulcerNum = $(this).closest("li").index() + 1;
+    var appendNote = $('<div class="assessUlcerNote" />').text("Assessed Ulcer " + ulcerNum);
+    var imageNote = $('<img src="img/graphNote.png" alt="Graph Note" />');
+    newli.append(imageNote);
+    newli.append(appendNote);
+    $noteAssessForm.after(newli);    
     $assessUlcerPane.removeClass('hidden');
   }); 
 

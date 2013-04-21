@@ -650,7 +650,7 @@ ul.reminders li.complete .checkbox img{
 }
 
 #reminderNoteBtn {
-  right: 170px;
+  right: 35%;
   width: 120px;
   text-align: center;
 }
@@ -724,9 +724,39 @@ ul.notes .newNote textarea:focus + .submitBtn{
 }
 
 #postNoteBtn {
-  right: 310px;
+  right: 45%;
   width: 120px;  
   text-align: center;
+}
+
+ul.notes li > div.assessUlcerNote {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  left: 160px;
+  line-height: 0px;
+  color: #222;
+}
+
+ul.notes li > div.reminderUlcerNote {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  left: 160px;
+  line-height: 0px;
+  color: #222;
+}
+
+ul.notes li.assessNote {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+ul.notes li.assessNote img {
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  left: 60px;
 }
 
 /*****************************************************************************
