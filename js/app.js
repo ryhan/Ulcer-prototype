@@ -90,6 +90,15 @@ function reminders(){
 
   // Manage toggling on/off reminders
   $('#reminderList').on('touchstart', '.checkbox', function(e){
+    $noteReminderCompleteForm = $('#noteList li.newNote');
+    var newli = $('<li class="assessNote"/>');
+
+    var reminderTxt = $(this).next().text();
+    var appendNote = $('<div class="assessUlcerNote" />').text("Completed task: " + reminderTxt);
+    var imageNote = $('<img src="img/check.png" alt="Completed Task Note" />');
+    newli.append(imageNote);
+    newli.append(appendNote);
+    $noteReminderCompleteForm.after(newli);    
     $(e.target.parentNode).toggleClass('complete');
     $(e.target.parentNode.parentNode).toggleClass('complete');
   });
@@ -166,14 +175,15 @@ function reminders(){
 
   var postReminder = function(message, tag, time){
     var newli = $('<li />');
-
+    var newspan = $('<span />');
+    newspan.append(message);
     var checkbox = $('<div class="checkbox" />').html('<img src="img/check.png"/>')
     var tags = $('<div class="tags" />').html(tag);
 
     var date = $('<div class="time" />').text(time);
 
     newli.append(checkbox);
-    newli.append(message);
+    newli.append(newspan);
     newli.append(tags);    
     newli.append(date);
 
@@ -291,7 +301,7 @@ function newulcerPane(){
     var imageNote = $('<img src="img/addNewUlcer.png" alt="Add Ulcer Note" />');
     newli.append(imageNote);
     newli.append(appendNote);
-    $noteAddUlcerForm.after(newli);        
+    $noteAddUlcerForm.after(newli);
     $addUlcerPane.removeClass('hidden');
   }); 
 
