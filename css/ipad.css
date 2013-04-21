@@ -786,12 +786,14 @@ ul.notes li.flag{
   padding-bottom: 6px;
   color: #777;
 
-  background-color: #EEE;
-  background: -webkit-linear-gradient(top, #DDD, #EEE);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  background-color: #EAF0FF;
+  border-color: #9DB2E4;
+  box-shadow: 0 -1px 0 #9DB2E4;
 }
 ul.notes li.flag p{
   font-size: 14px;
+  font-weight: bold;
+  color: #2D498B;
 
 }
 ul.notes li > div.assessUlcerNote {
