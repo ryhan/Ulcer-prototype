@@ -650,7 +650,7 @@ ul.reminders li.complete .checkbox img{
 }
 
 #reminderNoteBtn {
-  margin-right: 175px;
+  right: 35%;
   width: 120px;
   text-align: center;
 }
