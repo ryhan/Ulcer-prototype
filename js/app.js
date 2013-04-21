@@ -284,6 +284,14 @@ function newulcerPane(){
   var $addUlcerPane = $('#addUlcerPane');
 
   $addUlcerBtn.bind('touchstart', function(){
+    $noteAddUlcerForm = $('#noteList li.newNote');
+    var newli = $('<li class="assessNote"/>');
+
+    var appendNote = $('<div class="assessUlcerNote" />').text("Added New Ulcer");
+    var imageNote = $('<img src="img/addNewUlcer.png" alt="Add Ulcer Note" />');
+    newli.append(imageNote);
+    newli.append(appendNote);
+    $noteAddUlcerForm.after(newli);        
     $addUlcerPane.removeClass('hidden');
   }); 
 
@@ -399,6 +407,14 @@ function newbradenPane(){
   var $bradenScalePane = $('#bradenScalePane');
 
   $bradenBtn.bind('touchstart', function(){
+    $noteBradenAssessForm = $('#noteList li.newNote');
+    var newli = $('<li class="assessNote"/>');
+
+    var appendNote = $('<div class="assessUlcerNote" />').text("Conducted Braden Assessment");
+    var imageNote = $('<img src="img/bradenNote.png" alt="Braden Note" />');
+    newli.append(imageNote);
+    newli.append(appendNote);
+    $noteBradenAssessForm.after(newli);    
     $bradenScalePane.removeClass('hidden');
   });
   $testRiskBtn.bind('touchstart', function(){
