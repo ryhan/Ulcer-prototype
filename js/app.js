@@ -224,6 +224,7 @@ function note(){
 
   $postNoteBtn.bind('touchstart', function(){
     var message = $noteInput.val();
+    $navBtns.show();    
     var tags = $tagInput.val().split(',').join('<br>');
     //var tags = "Ulcer 3";
     var time = "Tuesday March 19, 2013 at 10:45am";
@@ -233,6 +234,9 @@ function note(){
     }
 
     $postNoteBtn.addClass('hidden');
+    $cancelNoteBtn.addClass('hidden');
+    $cancelNoteBtn.hide();
+    
     $noteInput.val('');
     $tagInput.val('');
 
