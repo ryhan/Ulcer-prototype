@@ -38,21 +38,54 @@
       -->
       <ul class="list">
         <li>Justin <strong>Andre</strong>
-          <p>Room 216 A</p></li>
+          <p>Room 216 A</p>
+          <div class="star">
+            <img class="unselected" src="img/star_unselected.png"/>
+            <img class="selected" src="img/star_selected.png"/>
+          </div>
+        </li>
         <li class="selected">Stephanie <strong>Clay</strong>
-          <p>Room 213 A</p></li>
+          <p>Room 213 A</p>
+          <div class="star">
+            <img class="unselected" src="img/star_unselected.png"/>
+            <img class="selected" src="img/star_selected.png"/>
+          </div></li>
         <li>Roland <strong>Daley</strong>
-          <p>Room 482 B</p></li>
+          <p>Room 482 B</p>
+          <div class="star">
+            <img class="unselected" src="img/star_unselected.png"/>
+            <img class="selected" src="img/star_selected.png"/>
+          </div></li>
         <li>Scott <strong>Duhon</strong>
-          <p>Room 303 A</p></li>
+          <p>Room 303 A</p>
+          <div class="star">
+            <img class="unselected" src="img/star_unselected.png"/>
+            <img class="selected" src="img/star_selected.png"/>
+          </div></li>
         <li>Carol <strong>Garcia</strong>
-          <p>Room 258 B</p></li>
+          <p>Room 258 B</p>
+          <div class="star">
+            <img class="unselected" src="img/star_unselected.png"/>
+            <img class="selected" src="img/star_selected.png"/>
+          </div></li>
         <li>Lori <strong>Gray</strong>
-          <p>Room 803 B</p></li>
+          <p>Room 803 B</p>
+          <div class="star">
+            <img class="unselected" src="img/star_unselected.png"/>
+            <img class="selected" src="img/star_selected.png"/>
+          </div></li>
         <li>Annie <strong>Nielson</strong>
-          <p>Room 236 A</p></li>
+          <p>Room 236 A</p>
+          <div class="star">
+            <img class="unselected" src="img/star_unselected.png"/>
+            <img class="selected" src="img/star_selected.png"/>
+          </div></li>
         <li>John <strong>Wilson</strong>
-          <p>Room 473 B</p></li>
+          <p>Room 473 B</p>
+          <div class="star">
+            <img class="unselected" src="img/star_unselected.png"/>
+            <img class="selected" src="img/star_selected.png"/>
+          </div></li>
       </ul>
     </aside>
     <div class="main">
@@ -100,7 +133,7 @@
             <li id="ulcerTab" class="selected">Ulcers</li>
             <li id="testTab">Tests</li>
             <li id="reminderTab">Tasks</li>
-            <li id="noteTab">Notes</li>
+            <li id="noteTab">Log</li>
           </ul>
         </nav>
       </div>
@@ -166,8 +199,6 @@
           <ul class="reminders">
   
             <li class="newReminder">
-              <div class="titleReminders">New Reminder</div>
-              <textarea id="reminderText" type="text" placeholder="Add a reminder here."></textarea>
               <div class="time"><select name="tag">
                 <option value="1 Hour">1 Hour</option>
                 <option value="2 Hours">2 Hours</option>
@@ -175,6 +206,8 @@
                 <option value="Today">Today</option>
                 <option value="Tomorrow">Tomorrow</option>              
               </select></div>
+              <div class="titleReminders">New Reminder</div>
+              <textarea id="reminderText" type="text" placeholder="Add a reminder here."></textarea>
               <div class="titleReminders">Tags</div>              
               <textarea id="tagReminderText" placeholder="Add a tag here."></textarea>
               <div id="reminderNoteBtn" class="btn btnBlue hidden">Post</div>
@@ -187,7 +220,7 @@
             <li class="urgent">
               <div class="tags">Assess<br>Risk</div>              
               <div class="checkbox"><img src="img/check.png"/></div>
-              Complete Braden Risk Test
+              Complete Braden Test
               <div class="time">Today</div></li>
             <li class="urgent">
               <div class="tags">Wounds</div>                            
@@ -197,7 +230,7 @@
             <li class="">
               <div class="tags">Ulcers</div>              
               <div class="checkbox"><img src="img/check.png"/></div>
-              Educate Patient about Ulcers
+              Patient Ulcer Education
               <div class="time">Tomorrow</div></li>
             <li class="divider">
               Treatment Checklist
@@ -205,7 +238,7 @@
             <li class="urgent">
               <div class="tags">Ulcer 1<br>Risk</div>
               <div class="checkbox"><img src="img/check.png"/></div>
-              Contact Wound Care Team
+              Contact Wound Team
               <div class="time">Today</div></li>
             <li>
               <div class="tags">Ulcer 1<br>Ulcer 2<br>Ulcer 3</div>              
@@ -240,6 +273,10 @@
                   on the patient's upper right thigh and lower back.
               </p>
               </li>
+             <li class="flag">
+              <p> Wound 1 was Assessed by R. Oldak on March 6 at 4pm.
+              </p>
+              </li>
               
             <li>
               <div class="time">Wednesday March 6, 2013 at 4pm</div>
@@ -254,6 +291,10 @@
               <div class="tags">Risk</div>
               <p> The patient was admitted and determined to be at a
                   high risk for pressure ulcers through a Braden Risk Assessment.
+              </p>
+              </li>
+              <li class="flag">
+              <p> Braden Risk Assessment Completed on March 4 at 10:37am.
               </p>
               </li>
 
