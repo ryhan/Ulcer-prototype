@@ -1,6 +1,7 @@
 /* app.js */
 $(function() {
 
+  starring();
   patientTabs();
   reminders();
   note();
@@ -15,6 +16,19 @@ $(function() {
 });
 
 var iScroll;
+
+// Manages patient starring
+function starring(){
+
+  var stars = $('aside ul.list .star');
+  stars.addClass('unselected');
+  var toggle = function(){
+    $(this).toggleClass('unselected');
+    $(this).toggleClass('selected');
+  }
+  stars.bind('touchstart', toggle);
+
+}
 
 // Manages Ulcer / Reminders / Notes Tabs
 function patientTabs(){

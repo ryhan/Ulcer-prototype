@@ -179,6 +179,31 @@ aside ul.list li.selected p{
   text-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
 
+aside ul.list .star{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+}
+
+aside ul.list .star img{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  opacity: 0;
+}
+
+aside ul.list .star.selected img.selected{
+  opacity: 1;
+}
+
+aside ul.list .star.unselected img.unselected{
+  opacity: 1;
+}
+
+
 
 /*****************************************************************************
 Patient Information
