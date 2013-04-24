@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+<head>
+  <title>Ulcer</title>
+  <meta charset="utf-8">
+
+  <!-- Apple Meta Data -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <link rel="stylesheet" type="text/css" href="css/ipad.css">
+  <link rel="stylesheet" type="text/css" href="css/setup.css">
+
+</head>
+<body>
+
+  <img class="dev" src="ipad.png"/>
+
+  <div class="statusbar"></div>
+
+  <!-- App Frame -->
+  <div class="frame" style="">
+    <aside>
+      <nav><h1>Patients</h1></nav>
+      <!--
+      <nav class="tabs">
+        <ul class="tabs">
+          <li class="selected">Patients</li>
+          <li>History</li>
+        </ul>
+      </nav>
+      -->
+      <ul class="list">
+        <li>Justin <strong>Andre</strong>
+          <p>Room 216 A</p></li>
+        <li class="selected">Stephanie <strong>Clay</strong>
+          <p>Room 213 A</p></li>
+        <li>Roland <strong>Daley</strong>
+          <p>Room 482 B</p></li>
+        <li>Scott <strong>Duhon</strong>
+          <p>Room 303 A</p></li>
+        <li>Carol <strong>Garcia</strong>
+          <p>Room 258 B</p></li>
+        <li>Lori <strong>Gray</strong>
+          <p>Room 803 B</p></li>
+        <li>Annie <strong>Nielson</strong>
+          <p>Room 236 A</p></li>
+        <li>John <strong>Wilson</strong>
+          <p>Room 473 B</p></li>
+      </ul>
+    </aside>
+    <div class="main">
+      <!--<nav></nav>-->
+      <nav>
+        <div class="btn btnLeft portraitOnly">Patient List</div>
+        <!--<div class="btn">Capture</div>-->
+        <div class="btn btnBlue">Capture</div>
+        <div id="addUlcerBtn" class="btn">Add Ulcer</div>
+      </nav>
+
+      <!-- Patient Information -->
+      <header>
+        <div class="testtarget">
+          <div class="paper"></div>
+          <div class="paper"></div>
+        </div>
+        <h1> Stephanie Clay</h1>
+        <ul>
+          <li>Room 213 A</li>
+          <li>Born - August 4, 1983</li>
+          <li>Admitted - Monday March 4, 2013</li>
+          <li id="bradenBtn">Braden Risk 6 - High</li>
+        </ul>
+      </header>
+      <div class="tabdivider">
+        <nav class="tabs">
+          <!--<div class="btn">New Ulcer</div> -->
+          <ul class="tabs">
+            <li id="ulcerTab" class="selected">Ulcers</li>
+            <li id="reminderTab">Reminders</li>
+            <li id="noteTab">Notes</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="tabsection">
+        <div id="ulcerList" class="tabcontent hidden">
+          <!-- List of ulcers -->
+          <ul class="ulcers">
+            <li>
+              <img class="ulcer" src="img/ulcer1.png"/>
+              <div class="ulcerDescription">
+                <strong>Ulcer 1 - Left Knee</strong><br/>
+                Start Date - Wednesday March 6, 2013<br/>
+                Last Assessment - 2 Hours ago
+              </div>
+              <div class=""
+              </li>
+            <li>
+              <img class="ulcer" src="img/ulcer2.png"/>
+              <div class="ulcerDescription">
+                <strong>Ulcer 2 - Upper Right Thigh</strong><br/>
+                Start Date - Thursday March 7, 2013<br/>
+                Last Assessment - 6 Hours ago
+              </div>
+              </li>
+            <li>
+              <img class="ulcer" src="img/ulcer3.png"/>
+              <div class="ulcerDescription">
+                <strong>Ulcer 3 - Lower Back</strong><br/>
+                Start Date - Thursday March 7, 2013<br/>
+                Last Assessment - 4 Hours ago
+              </div>
+              </li>
+          </ul>
+        </div>
+        <div id="reminderList" class="tabcontent hidden">
+          <!-- List of reminders -->
+          <ul class="reminders">
+            <li>
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Rotate Patient
+              <div class="time">In 26 Minutes</div></li>
+            <li class="complete">
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Educate Patient about Ulcers
+              <div class="time">Today</div></li>
+            <li>
+              <div class="checkbox"><img src="img/check.png"/></div>
+              Re-examine Ulcer 2 (Right Thigh)
+              <div class="time">Tomorrow</div></li>
+          </ul>
+        </div>
+        <div id="noteList" class="tabcontent hidden">
+          <!-- List of notes -->
+          <ul class="notes">
+            <!-- New Note interface. Unfortunately, causes iOS Safari to mysteriously crash :( -->
+            <li class="newNote">
+              <div class="tags"><select name="tag">
+                <option value="no tag">No Tag</option>
+                <option value="ulcer 1">Ulcer 1</option>
+                <option value="ulcer 2">Ulcer 2</option>
+                <option value="ulcer 3">Ulcer 3</option>
+              </select></div>
+              <div class="time">New Note</div>
+              <div id="postNoteBtn" class="postNote btn btnBlue hidden">Post</div>
+              <textarea id="noteText" placeholder="DO NOT TOUCH ME IN iOS"></textarea>
+              </li>
+            <li>
+              <div class="tags">Ulcer 2<br/> Ulcer 3</div>
+              <div class="time">Thursday March 7, 2013 at 2pm</div>
+              <p> The floor nurse noted two new pressure wounds forming
+                  on the patient's upper right thigh and lower back.
+              </p>
+              </li>
+              
+            <li>
+              <div class="time">Wednesday March 6, 2013 at 4pm</div>
+              <div class="tags">Ulcer 1</div>
+              <p> The wound care team assessed a new wound on the 
+                  patient's left knee. Recommendation is to rotate
+                  the patient every two hours.
+              </p>
+              </li>
+            <li>
+              <div class="time">Monday March 4, 2013 at 11am</div>
+              <div class="tags">Risk</div>
+              <p> The patient was admitted and determined to be at a
+                  high risk for pressure ulcers through a Braden Risk Assessment.
+              </p>
+              </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div id="addUlcerPane" class="view addUlcer hidden">
+        <nav>
+          <div id="cancelUlcerPaneBtn" class="btn btnLeft">Cancel</div>
+          <div class="btn btnBlue">Save</div>
+          <h1> New Ulcer </h1>
+        </nav>
+        <div class="viewContent">
+          <ul class="steps">
+            <li><strong>Step 1 - Location</strong>
+              <input type="text" value="Anterior Deltoid"/></li>
+
+            <li><strong>Step 2 - Take a picture</strong>
+              <input type="text" value="Anterior Deltoid"/></li>
+
+            <li><strong>Step 3 - Dimensions</strong><br/>
+              <span>Length</span> <input type="number" value="2.3"/>cm<br/>
+              <span>Width</span> <input type="number" value="3.0"/>cm</br />
+              <span>Depth</span> <input type="number" value="0.3"/>cm</li>
+
+            <li><strong>Step 4 - Moisture</strong>
+              <input type="text" value="Not very"/></li>
+
+            <li><strong>Step 5 - Stage</strong>
+              <input type="text" value="Stage 2"/></li>
+
+            <li><strong>Final Notes</strong>
+              <textarea></textarea>
+          </ul>
+        </div>
+      </div>
+
+      <div id="bradenScalePane" class="view bradenScale hidden">
+        <nav>
+            <div id="cancelBradenBtn" class="btn btnLeft">Cancel</div>
+            <div class="btn btnBlue">Save</div>
+            <h1>Braden Assessment</h1>
+        </nav>
+        <div class="viewContent">
+            <table>
+              <tr>
+                <td class="bdnNum">1</td>
+                <td class="bdnQst">Sensory<br />Perception</td>
+                <td class="bdnAns">Ability to respond meaningfully to pressure-related 
+                                   discomfort<br />
+                  <input type="radio" name="sensory" value="1">
+                    1. Completely Limited: Unresponsive (does not moan, 
+                    flinch, or grasp) to painful stimuli, due to diminished level of
+                    consciousness or sedation OR limited ability to feel
+                    pain over most of body
+                  </input><br />
+
+                  <input type="radio" name="sensory" value="2">
+                    2. Very Limited: Responds only to painful stimuli. Cannot communicate
+                    discomfort except by moaning or restlessness OR has a sensory 
+                    impairment which limits the ability to feel pain or discomfort over
+                    &frac12; of the body
+                  </input><br />
+
+                  <input type="radio" name="sensory" value="3">
+                    3. Slightly Limited: Responds to verbal commands, but cannot always 
+                    communicate discomfort or the need to be turned OR has some sensory
+                    impairment which limits ability to feel pain or discomfort in 1 or 2
+                    externalities
+                  </input><br />
+
+                  <input type="radio" name="sensory" value="4">
+                    4. No Impairment: Responds to verbal commands. Has no sensory deficit
+                    which would limit ability to feel or voice pain or discomfort.
+                  </input><br />
+                </td>
+              </tr>
+
+              <tr>
+                <td class="bdnNum">2</td>
+                <td class="bdnQst">Moisture</td>
+                <td class="bdnAns">Degree to which skin is exposed to moisture<br />
+                  <input type="radio" name="moisture" value="1">
+                    1. Constantly Moist: Skin is kept moist almost constantly by 
+                    perspiration, urine, etc. Dampness detected every time patient is
+                    moved or turned.
+                  </input><br />
+                  <input type="radio" name="moisture" value="2">
+                    2. Very Moist: Skin is often, but not always moist. Linen must be 
+                    changed at least once a shift.
+                  </input><br />
+                  <input type="radio" name="moisture" value="3">
+                    3. Occasionally Moist: Skin is occasionally moist, requiring an extra
+                    linen change approximately once a day.
+                  </input><br />
+                  <input type="radio" name="moisture" value="4">
+                    4. Rarely Moist: Skin is usually dry, linen only requires changing
+                    at routine intervals.
+                  </input>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="bdnNum">3</td>
+                <td class="bdnQst">Activity</td>
+                <td class="bdnAns">Degree of physical activity
+                  <input type="radio" group="activity" value="1">
+                    1. Bedfast: Confined to bed.
+                  </input><br />
+                  <input type="radio" name="activity" value="2">
+                    2. Chairfast: Ability to walk severely limited or non-existent.
+                    Cannot bear own weight and/or must be assisted into chair or 
+                    wheelchair.
+                  </input><br />
+                  <input type="radio" name="activity" value="3">
+                    3. Walks Occasionally: Walks occasionally during day, but for very 
+                    short distances, with or without assistance. Spends majority of each 
+                    shift in bed or chair.
+                  </input><br />
+                  <input type="radio" name="activity" value="4">
+                    4. Walks Frequently: Walks outside room at least twice a day and 
+                    inside room at least once every two hours during walking hours.
+                  </input><br />
+                </td>
+              </tr>
+              
+              <tr>
+                <td class="bdnNum">4</td>
+                <td class="bdnQst">Mobility</td>
+                <td class="bdnAns">Ability to change and control body position<br />
+                  <input type="radio" name="mobility" value="1">
+                    1. Completely Immobile: Does not make even slight changes in body or
+                    extremity position without assistance.
+                  </input><br />
+                  <input type="radio" name="mobility" value="2">
+                    2. Very Limited: Makes occasional slight changes in body or extremity
+                    position but unable to make frequent or significant changes 
+                    independently.
+                  </input><br />
+                  <input type="radio" name="mobility" value="3">
+                    3. Slightly Limited: Makes frequent though slight changes in body or
+                    extremity position independently.
+                  </input><br />
+                  <input type="radio" name="mobility" value="4">
+                    4. No Limitation: Makes major and frequent changes in position.
+                  </input><br />
+                </td>
+              </tr>
+              
+              <tr>
+                <td class="bdnNum">5</td>
+                <td class="bdnQst">Nutrition</td>
+                <td class="bdnAns"><u>Usual</u> food intake pattern
+                  <input type="radio" group="nutrition" value="1">
+                    1. Very Poor: Never eats a complete meal. Rarely eats more than 
+                    &frac13; of any food offered. Eats 2 servings or less or protein
+                    (meat or dairy products) per day. Takes fluids poorly. Does not take
+                    a liquid dietary supplement OR is NPO and/or maintained on clear
+                    liquids or IV's for more than 5 days.
+                  </input><br />
+                  <input type="radio" name="nutrition" value="2">
+                    2. Probably Inadequate: Rarely eats a complete meal and generally
+                    eats only about &frac12; of any food offered. Protein intake includes
+                    only 3 servings of meat or dairy products per day. Occasionally will
+                    take a dietary supplement OR receives less than optimum amount of
+                    liquid or tube feeding.
+                  </input><br />
+                  <input type="radio" name="nutrition" value="3">
+                    3. Adequate: Eats over half of most meals. Eats a total of 4 servings
+                    of protein (meet or dairy products) per day. Occasionally will refuse
+                    a meal, but will usually take a supplement when offered OR is on a
+                    tube feeding or TPN regimen which probably meets most of nutritional 
+                    needs.
+                  </input><br />
+                  <input type="radio" name="nutrition" value="4">
+                    4. Excellent: Eats most of every meal. Never refuses a meal. Usually
+                    eats a total of 4 or more servings of meat and dairy products.
+                    Occasionally eats between meals. Does not require supplementation.
+                  </input><br />
+                </td>
+              </tr>
+              
+              <tr class="friction">
+                <td class="bdnNum">6</td>
+                <td class="bdnQst">Friction &amp;<br />Shear</td>
+                <td class="bdnAns">
+                  <input type="radio" name="friction" value="1">
+                    1. Problem: Requires moderate to maximum assistance in moving. 
+                    Complete lifting without sliding against sheets is impossible.
+                    Frequently slides down in bed or chair, requiring frequent
+                    repositioning with maximum assistance. Spasticity, contractures or
+                    agitation leads to almost constant friction.
+                  </input><br />
+                  <input type="radio" name="friction" value="2">
+                    2. Potential Problem: Moves feebly or requires minimum assistance.
+                    During a move skin pobably slides to some extent against sheets, 
+                    chair, restraints or other devices. Maintains relatively good position
+                    in chair or bed most of the time but occasionally slides down.
+                  </input><br />
+                  <input type="radio" name="friction" value="3">
+                    3. No Apparent Problem: Moves in bed and in chair independently and
+                    has sufficient muscle strength to lift up.
+                  </input><br />
+                </td>
+              </tr>
+            </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- New Note / Reminder Modal -->
+    <div class="modalBackdrop">
+      <div class="modal">
+        <nav class="tabs">
+          <div class="btn btnLeft">Cancel</div>
+          <div class="btn btnBlue">Save</div>
+          <!--<h1>Capture</h1>-->
+          <ul class="tabs">
+            <li id="noteModalTab" class="selected">Note</li>
+            <li id="reminderModalTab">Reminder</li>
+          </ul>
+        </nav>
+        <!--<div class="options">-->
+        <div class="modalContent">
+        </div>
+      </div>
+    </div>
+
+    <!-- New Ulcer Modal -->
+    <div class="modalBackdrop">
+      <div class="modal">
+        <nav>
+          <div class="btn btnLeft">Cancel</div>
+          <div class="btn btnBlue">Save</div>
+          <h1>Assess Ulcer</h1>
+        </nav>
+        <!--<div class="options">-->
+        <div class="modalContent">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Shown when the device is not an iPad -->
+  <div class="frame setup">
+    Setup
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/jquery.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

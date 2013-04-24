@@ -863,7 +863,7 @@ Add Ulcer View
   -webkit-transform: translate(0px,0px);
 }
 
-#addUlcerPane .viewContent, #bradenScalePane .viewContent, #allTestsPane .viewContent{
+#addUlcerPane .viewContent, #bradenScalePane .viewContent, #allTestsPane .viewContent, #cardPane .viewContent{
   background: -webkit-linear-gradient(top, #BBB, #EEE);
 }
 #addUlcerPane input[type='text']{
@@ -1362,3 +1362,65 @@ ul.extraNotes li div.time {
   text-align: center;
 }
 
+/****************************************************
+******************* Cards ***************************
+****************************************************/
+#rightArrow {
+  float: left;
+  font-size: 40px;
+  line-height: 200px;
+  color: #444;
+}
+.card {
+  margin: 25px;
+  display: inline-block;
+  width: 250px;
+  height: 200px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  box-shadow: 
+    inset 0 10px 30px #ccc,
+    0 2px 4px rgba(0,0,0,0.2);
+  background-color: #eee;
+  background: -webkit-linear-gradient(top, #eee, #efefef);
+
+  padding: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  float: left;
+}
+.nonvisible {
+  visibility: hidden;
+}
+.translucent {
+  opacity: .5;
+}
+ul.cardOptions {
+  list-style-type: none;
+  margin-top: 20px;
+}
+li.cardAnswer{
+  opacity: 0.8;
+  border: 1px solid #000;
+  background-color: #111;
+  border-radius: 5px;
+  color: #aaa;
+  background: -webkit-linear-gradient(top, #fff, #ccc);
+  background: -webkit-linear-gradient(top, #ddd, #fff);
+  color: #555;
+  border: 1px solid #aaa;
+  text-shadow: 0 1px #fff;
+
+  width: 60px;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px 8px;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}

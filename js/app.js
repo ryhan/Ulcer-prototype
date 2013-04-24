@@ -12,6 +12,7 @@ $(function() {
   historyUlcer();  
   historySlider();
   notes();
+  cardSwipes();
 
 });
 
@@ -515,6 +516,42 @@ function newbradenPane(){
     }
   });
 
+};
+
+function cardSwipes() {
+  var $cardBtn = $('#cardBtn');
+  var $cancelCardBtn = $('#cancelCardBtn');
+  var $saveCardBtn = $('#saveCardBtn');
+
+  var $cardPane = $('#cardPane');
+
+  $cardBtn.bind('touchstart', function(){
+    $cardPane.removeClass('hidden');
+  });
+  $cancelCardBtn.bind('touchstart', function(){
+    $cardPane.addClass('hidden');
+  });
+  $saveCardBtn.bind('touchstart', function(){
+    $cardPane.addClass('hidden');
+  });
+
+  var $mobileCard = $('#mobileCard');
+  var $mobileYes = $('#mobileYes');
+  var $mobileNo = $('#mobileNo');
+  var $rightArrow = $('#rightArrow');
+  var $painCard = $('#painCard');
+
+  $mobileYes.bind('touchstart', function() {
+    $mobileCard.addClass('translucent');
+    $rightArrow.removeClass('nonvisible');
+    $painCard.removeClass('nonvisible');
+  });
+
+  $mobileNo.bind('touchstart', function() {
+    $mobileCard.addClass('translucent');
+    $rightArrow.removeClass('nonvisible');
+    $painCard.removeClass('nonvisible');
+  });
 };
 
 function notes() {

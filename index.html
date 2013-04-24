@@ -187,7 +187,7 @@
                 <img src="img/risk.png"/>
                 <div class="testBtn">Assess Risk</div>
             </li>
-            <li>Braden Q Test
+            <li id="cardBtn">Braden Q Test
                 <div class="score">Children Only</div>
                 <div class="testBtn">Assess Risk</div>
             </li>
@@ -809,8 +809,42 @@
           <br/>
           <br/>
 
-        </div>
+         </div>
+       </div>
+     </div>
         <!-- END Braden Content -->
+  
+      <!-- BEGIN Card Swipes -->
+      <div id="cardPane" class="view cardSwipe hidden">
+        <nav>
+          <div id="cancelCardBtn" class="btn btnLeft">Cancel</div>
+          <div id="CavecardBtn" class="btn btnBlue">Save</div>
+          <h1>Flow Chart</h1>
+        </nav>
+        <div class="viewContent" id="cardWrapper">
+          <!-- Begin Card Content -->
+          <div class="scrollable">
+            <div id="mobileCard" class="card">
+              Is the patient mobile?
+              <ul class="cardOptions">
+                <li id="mobileYes" class="cardAnswer left">Yes</li>
+                <li id="mobileNo" class="cardAnswer right">No</li>
+              </ul>
+            </div>
+
+            <div id="rightArrow" class="nonvisible">&rarr;</div>
+
+            <div id="painCard" class="card nonvisible">
+              Does the patient respond to painful stimuli?
+              <ul class="cardOptions">
+                <li id="painYes" class="cardAnswer left">Yes</li>
+                <li id="painNo" class="cardAnswer right">No</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+     </div>
+     <!-- END Card Swipes -->
 
         </div>
       </div>
